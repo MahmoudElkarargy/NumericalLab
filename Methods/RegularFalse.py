@@ -2,7 +2,7 @@ from sympy import var
 from sympy import sympify
 
 
-def func(expr, value):
+def func(expr, value, x):
     return expr.subs(x, value)
 
 
@@ -15,8 +15,8 @@ EPSILON = 0.00001
 # The function is x^3 - x^2 + 2
 
 # Prints root of func(x) in interval [a, b]
-def regulaFalsi(a, b, expr):
-    if func(expr, a) * func(expr, b) >= 0:
+def regulaFalsi(a, b, expr, MAX_ITER, EPSILON, x):
+    if func(expr, a, x) * func(expr, b, x) >= 0:
         print("You have not assumed right a and b")
         return -1
     c = a
@@ -25,14 +25,14 @@ def regulaFalsi(a, b, expr):
     while i > 0:
         # Find the point that touches x a/xis
         old_c = c
-        c = (a * func(expr, b) - b * func(expr, a)) / (func(expr, b) - func(expr, a))
+        c = (a * func(expr, b, x) - b * func(expr, a, x)) / (func(expr, b, x) - func(expr, a, x))
         if abs(c - old_c) / c < EPSILON:
             break
         # Check if the above found point is root
-        if func(expr, c) == 0:
+        if func(expr, c, x) == 0:
             break
         # Decide the side to repeat the steps
-        elif func(expr, c) * func(expr, a) < 0:
+        elif func(expr, c, x) * func(expr, a, x) < 0:
             b = c
         else:
             a = c
@@ -50,8 +50,8 @@ def mainFunc():
     # Take from user assumtion of a and b.
     a = int(input("Enter your assumtion for lower bond: "))
     b = int(input("Enter your assumtion for upper bond: "))
-    MAX_ITER = int(input("Enter number of iterations-: "))
+    MAX_ITER = int(input("Enter number of iterations: "))
     EPSILON = float(input("Enter Epsilon-: "))
 
-    regulaFalsi(a, b, expr)
+    regulaFalsi(a, b, expr, MAX_ITER, EPSILON, x)
 
