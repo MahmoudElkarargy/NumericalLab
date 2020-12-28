@@ -37,21 +37,10 @@ def bisection(a, b, expr, maxIteration, Epsilon, x):
         else:
             a = c
         step +=1
-    print("The value of root is : ","%.4f"%c)
+    return "%.8f"%c
 
 # Main code
-def mainFunc():
-    #take from the user function.
+def mainFunc(function, maxIteration, epsilon, a, b):
     x = var('x')  # the possible variable names must be known beforehand...
-    function = input("Enter your function: ")
     expr = sympify(function)
-
-    # Take from user assumtion of a and b.
-    a = int(input("Enter your assumtion for lower bond: "))
-    b = int(input("Enter your assumtion for upper bond: "))
-
-    maxIteration = int(input("Enter max number of Iterations: "))
-    Epsilon = float(input("Enter Epsilon: "))
-
-
-    bisection(a, b, expr, maxIteration, Epsilon, x)
+    return bisection(a, b, expr, maxIteration, epsilon, x)
