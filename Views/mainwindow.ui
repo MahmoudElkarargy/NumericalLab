@@ -6,60 +6,176 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>534</width>
-    <height>400</height>
+    <width>765</width>
+    <height>453</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(0, 0, 40)</string>
+  </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QPushButton" name="button1">
+   <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
       <x>170</x>
-      <y>220</y>
-      <width>171</width>
-      <height>91</height>
+      <y>20</y>
+      <width>391</width>
+      <height>61</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background: transparent;
+color: rgb(166, 203, 255);
+margin: 5px;
+font-size: 36px;
+font-family: &quot;Lucida Console&quot;, &quot;Courier New&quot;, monospace;
+</string>
+    </property>
     <property name="text">
-     <string>Press me</string>
+     <string>Numerical Project</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label1">
+   <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>190</x>
-      <y>60</y>
-      <width>141</width>
-      <height>51</height>
+      <x>30</x>
+      <y>100</y>
+      <width>111</width>
+      <height>21</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background: transparent;
+color: rgb(234, 255, 253);
+margin: 5px;
+font-size: 18px;
+font-family: &quot;Lucida Console&quot;, &quot;Courier New&quot;, monospace;
+color: rgb(234, 255, 253);</string>
+    </property>
     <property name="text">
-     <string>Ahle mesa 3l regalaaa</string>
+     <string>Function:</string>
     </property>
    </widget>
+   <widget class="QLineEdit" name="lineEdit">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>90</y>
+      <width>241</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">padding: 10px 0;
+margin: 5px 0;
+border: 0;
+border-bottom: 1px solid #999;
+outline: none;
+font-size: 16px;
+font-family: &quot;Lucida Console&quot;, &quot;Courier New&quot;, monospace;
+color: rgb(234, 255, 253);</string>
+    </property>
+    <property name="inputMask">
+     <string/>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="checkBox">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>130</y>
+      <width>191</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">padding: 10px 0;
+outline: none;
+background: transparent;
+color: rgb(234, 255, 253);
+margin: 5px;
+font-size: 16px;
+font-family: &quot;Lucida Console&quot;, &quot;Courier New&quot;, monospace;</string>
+    </property>
+    <property name="text">
+     <string>Select from File</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>440</x>
+      <y>90</y>
+      <width>141</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background: transparent;
+color: rgb(234, 255, 253);
+margin: 5px;
+font-size: 18px;
+font-family: &quot;Lucida Console&quot;, &quot;Courier New&quot;, monospace;</string>
+    </property>
+    <property name="text">
+     <string>Method:</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="comboBox">
+    <property name="geometry">
+     <rect>
+      <x>560</x>
+      <y>90</y>
+      <width>131</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">padding: 10px 0;
+    margin: 5px 0;
+    border: 0;
+    border-bottom: 1px solid #999;
+    outline: none;
+    background: transparent;
+color: rgb(234, 255, 253);</string>
+    </property>
+    <item>
+     <property name="text">
+      <string>Bisection</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>False-position</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Fixed point</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Newton-Raphson
+</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Secant</string>
+     </property>
+    </item>
+   </widget>
   </widget>
-  <widget class="QMenuBar" name="menuBar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>534</width>
-     <height>22</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QToolBar" name="mainToolBar">
-   <attribute name="toolBarArea">
-    <enum>TopToolBarArea</enum>
-   </attribute>
-   <attribute name="toolBarBreak">
-    <bool>false</bool>
-   </attribute>
-  </widget>
-  <widget class="QStatusBar" name="statusBar"/>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>
