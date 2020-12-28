@@ -20,7 +20,8 @@ def secant(x0, x1, e, N, Function):
             break
 
         x2 = x0 - (x1 - x0) * f(x0, Function) / (f(x1, Function) - f(x0, Function))
-        print('Iteration-%d, x2 = %0.6f and f(x2) = %0.6f' % (step, x2, f(x2, Function)))
+        fx2=f(x2,Function)
+        print('Iteration-%d, x2 = %0.6f and f(x2) = %0.6f' % (step, x2,fx2))
         x0 = x1
         x1 = x2
         step = step + 1
@@ -29,8 +30,10 @@ def secant(x0, x1, e, N, Function):
             print('Not Convergent!')
             break
 
-        condition = abs(f(x2, Function)) > e
-    return '%0.8f' % x2
+        if abs(fx2) < e :
+            break
+
+    return '%0.6f' % x2
 
 def mainFunc(expr, N, e, x0, x1):
 
