@@ -1,6 +1,7 @@
 import Methods.Bisection as Bisection
 import Methods.RegularFalse as RegularFalse
 import Methods.Secant as Secant
+import Methods.newton as newton
 
 print("\n1- Bisection Method\t 2- Regular False Method\n3- Secant Method")
 method = input("\nPlease select your method:  ")
