@@ -11,6 +11,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 import Methods.Bisection as Bisection
 import Methods.RegularFalse as RegularFalse
 import Methods.Secant as Secant
+import Methods.FixedPoint as Fixed
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -617,6 +618,7 @@ class Ui_MainWindow(object):
         self.bisectionCalcBtn.clicked.connect(self.BisectionCalcBtnClicked)
         self.falseCalcBtn.clicked.connect(self.RegularFalseCalcBtnClicked)
         self.secantCalcBtn.clicked.connect(self.SecantCalcBtnClicked)
+        self.fixedCalcBtn.clicked.connect(self.FixedPointCalcBtnClicked)
 
     def BisectionCalcBtnClicked(self):
         # Same for all methods
@@ -629,6 +631,7 @@ class Ui_MainWindow(object):
 
         result = Bisection.mainFunc(function, maxIteration, epsilon, lowerBound, upperBound)
         self.bisectionRoot.setText(str(result))
+        print(Bisection.getFinalIter())
 
     def RegularFalseCalcBtnClicked(self):
         # Same for all methods
@@ -653,6 +656,17 @@ class Ui_MainWindow(object):
 
         result = Secant.mainFunc(function, maxIteration, epsilon, firstGuess, secondGuess)
         self.secantRoot.setText(str(result))
+
+    def FixedPointCalcBtnClicked(self):
+        # Same for all methods
+        function = self.functionLineEdit.text()
+        maxIteration = int(self.maxIterations.text())
+        epsilon = float(self.Epsilon.text())
+        # Fixed Point parameters
+        firstGuess = int(self.fixedFirstGuess.text())
+
+        result = Fixed.mainFunc(function, maxIteration, epsilon, firstGuess)
+        self.fixedRoot.setText(str(result))
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate

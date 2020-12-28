@@ -14,6 +14,8 @@ from sympy import sympify
 def func(expr, value, x):
 	return expr.subs(x, value)
 
+iterationStr = "*** BISECTION METHOD ITERATIONS ***\n"
+finalIteration = 0
 
 # Prints root of func(x)
 # with error of EPSILON
@@ -37,10 +39,24 @@ def bisection(a, b, expr, maxIteration, Epsilon, x):
         else:
             a = c
         step +=1
-    return "%.8f"%c
+        print('Iteration(%d): X(lower) | f(X-lower) | X(upper) | f(X-upper) | X(mid) | f(X-mid)' % step)
+        print("\t\t\t %.6f \t %.6f \t  %.6f \t %.6f \t %.6f \t %.6f \n"%(a, func(expr,a,x), b, func(expr,b,x), c, func(expr,c,x)))
+
+        # iterationStr.append(str('Iteration(%d): X(lower) | f(X-lower) | X(upper) | f(X-upper) | X(mid) | f(X-mid)' % step))
+        # iterationStr.append(str("\t\t\t %.6f \t %.6f \t  %.6f \t %.6f \t %.6f \t %.6f \n"%(a, func(expr,a,x), b, func(expr,b,x), c, func(expr,c,x))))
+
+    finalIteration = step
+    print(finalIteration)
+    # print(iterationStr)
+    return "%.6f"%c
 
 # Main code
 def mainFunc(function, maxIteration, epsilon, a, b):
     x = var('x')  # the possible variable names must be known beforehand...
     expr = sympify(function)
     return bisection(a, b, expr, maxIteration, epsilon, x)
+
+def getFinalIter():
+    return finalIteration
+def getIterationsDetails():
+    return iterationStr
