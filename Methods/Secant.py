@@ -30,16 +30,10 @@ def secant(x0, x1, e, N, Function):
             break
 
         condition = abs(f(x2, Function)) > e
-    print('\n Required root is: %0.8f' % x2)
+    return '%0.8f' % x2
 
-def mainFunc():
+def mainFunc(expr, N, e, x0, x1):
 
-    x0 = float(input('Enter First Guess: '))
-    x1 = float(input('Enter Second Guess: '))
-    e = float(input('Tolerable Error: '))
-    N = int(input('Maximum Step: '))
-    expr = input('please enter equation: ')
     Function = sympify(expr)
-
     # Starting Secant Method
-    secant(x0, x1, e, N, Function)
+    return secant(x0, x1, e, N, Function)

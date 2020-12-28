@@ -15,7 +15,7 @@ EPSILON = 0.00001
 # The function is x^3 - x^2 + 2
 
 # Prints root of func(x) in interval [a, b]
-def regulaFalsi(a, b, expr, x,MAX_ITER = 50, EPSILON = 0.001):
+def regulaFalsi(a, b, expr, x,MAX_ITER, EPSILON):
     if func(expr, a, x) * func(expr, b, x) >= 0:
         print("You have not assumed right a and b")
         return -1
@@ -25,7 +25,6 @@ def regulaFalsi(a, b, expr, x,MAX_ITER = 50, EPSILON = 0.001):
     old_c = int();
     while i > 0:
         # Find the point that touches x a/xis
-
         c = (a * func(expr, b, x) - b * func(expr, a, x)) / (func(expr, b, x) - func(expr, a, x))
         if abs(abs(c - old_c) / c) < EPSILON:
             break
@@ -39,20 +38,11 @@ def regulaFalsi(a, b, expr, x,MAX_ITER = 50, EPSILON = 0.001):
             a = c
         i = i - 1
         old_c = c
-    print("The value of root is : ", '%.4f' % c)
+    return '%.4f' % c
 
-def mainFunc():
-    # Driver code to test above function
-    # Initial values assumed
+def mainFunc(function, maxIteration, epsilon, a, b):
     x = var('x')  # the possible variable names must be known beforehand...
-    function = input("Enter your function: ")
     expr = sympify(function)
-    print
-    # Take from user assumtion of a and b.
-    a = int(input("Enter your assumtion for lower bond: "))
-    b = int(input("Enter your assumtion for upper bond: "))
-    MAX_ITER = int(input("Enter number of iterations: "))
-    EPSILON = float(input("Enter Epsilon-: "))
-
-    regulaFalsi(a, b, expr, x, MAX_ITER, EPSILON)
+    print("bsmallah")
+    return regulaFalsi(a, b, expr, x, maxIteration, epsilon)
 
