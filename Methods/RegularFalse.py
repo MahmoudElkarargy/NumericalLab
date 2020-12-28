@@ -15,18 +15,17 @@ EPSILON = 0.00001
 # The function is x^3 - x^2 + 2
 
 # Prints root of func(x) in interval [a, b]
-def regulaFalsi(a, b, expr, MAX_ITER, EPSILON, x):
+def regulaFalsi(a, b, expr, x,MAX_ITER = 50, EPSILON = 0.001):
     if func(expr, a, x) * func(expr, b, x) >= 0:
         print("You have not assumed right a and b")
         return -1
     c = a
     # Initialize result
     i = MAX_ITER
-    print(MAX_ITER)
+    old_c = int();
     while i > 0:
         # Find the point that touches x a/xis
-        print("loop11")
-        old_c = c
+
         c = (a * func(expr, b, x) - b * func(expr, a, x)) / (func(expr, b, x) - func(expr, a, x))
         if abs(abs(c - old_c) / c) < EPSILON:
             break
@@ -39,7 +38,7 @@ def regulaFalsi(a, b, expr, MAX_ITER, EPSILON, x):
         else:
             a = c
         i = i - 1
-        print("loop")
+        old_c = c
     print("The value of root is : ", '%.4f' % c)
 
 def mainFunc():
@@ -55,5 +54,5 @@ def mainFunc():
     MAX_ITER = int(input("Enter number of iterations: "))
     EPSILON = float(input("Enter Epsilon-: "))
 
-    regulaFalsi(a, b, expr, MAX_ITER, EPSILON, x)
+    regulaFalsi(a, b, expr, x, MAX_ITER, EPSILON)
 
