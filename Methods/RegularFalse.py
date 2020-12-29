@@ -21,9 +21,9 @@ def regulaFalsi(a, b, expr, x,MAX_ITER, EPSILON):
         return -1
     c = a
     # Initialize result
-    i = MAX_ITER
+    i = 1
     old_c = int(0)
-    while i > 0:
+    while i < MAX_ITER:
         # Find the point that touches x a/xis
 
         c = (a * func(expr, b, x) - b * func(expr, a, x)) / (func(expr, b, x) - func(expr, a, x))
@@ -38,9 +38,9 @@ def regulaFalsi(a, b, expr, x,MAX_ITER, EPSILON):
         else:
             a = c
         old_c = c
-        i = i - 1
+        i = i + 1
 
-    return '%.4f' % c
+    return "%d ): %.6f" % (i, c)
 
 def mainFunc(function, maxIteration, epsilon, a, b):
     x = var('x')  # the possible variable names must be known beforehand...

@@ -166,7 +166,7 @@ class Ui_MainWindow(object):
 "border: none;")
         self.label_19.setObjectName("label_19")
         self.bisectionRoot = QtWidgets.QLabel(self.groupBox_2)
-        self.bisectionRoot.setGeometry(QtCore.QRect(310, 80, 141, 31))
+        self.bisectionRoot.setGeometry(QtCore.QRect(240, 80, 141, 31))
         self.bisectionRoot.setStyleSheet("background: transparent;\n"
 "color: rgb(234, 255, 253);\n"
 "margin: 5px;\n"
@@ -174,19 +174,7 @@ class Ui_MainWindow(object):
 "font-family: \"Lucida Console\", \"Courier New\", monospace;\n"
 "color: rgb(234, 255, 253);\n"
 "border: none;")
-        self.bisectionRoot.setText("")
         self.bisectionRoot.setObjectName("bisectionRoot")
-        self.iterationBisection = QtWidgets.QLabel(self.groupBox_2)
-        self.iterationBisection.setGeometry(QtCore.QRect(240, 80, 61, 31))
-        self.iterationBisection.setStyleSheet("background: transparent;\n"
-"color: rgb(234, 255, 253);\n"
-"margin: 5px;\n"
-"font-size: 16px;\n"
-"font-family: \"Lucida Console\", \"Courier New\", monospace;\n"
-"color: rgb(234, 255, 253);\n"
-"border: none;")
-        self.iterationBisection.setText("")
-        self.iterationBisection.setObjectName("iterationBisection")
         self.tabWidget.addTab(self.Bisection, "")
         self.tab_4 = QtWidgets.QWidget()
         self.tab_4.setObjectName("tab_4")
@@ -253,7 +241,7 @@ class Ui_MainWindow(object):
 "border: none;")
         self.label_14.setObjectName("label_14")
         self.fixedRoot = QtWidgets.QLabel(self.groupBox)
-        self.fixedRoot.setGeometry(QtCore.QRect(310, 80, 141, 31))
+        self.fixedRoot.setGeometry(QtCore.QRect(240, 80, 141, 31))
         self.fixedRoot.setStyleSheet("background: transparent;\n"
 "color: rgb(234, 255, 253);\n"
 "margin: 5px;\n"
@@ -261,19 +249,7 @@ class Ui_MainWindow(object):
 "font-family: \"Lucida Console\", \"Courier New\", monospace;\n"
 "color: rgb(234, 255, 253);\n"
 "border: none;")
-        self.fixedRoot.setText("")
         self.fixedRoot.setObjectName("fixedRoot")
-        self.iterationFixed = QtWidgets.QLabel(self.groupBox)
-        self.iterationFixed.setGeometry(QtCore.QRect(240, 80, 61, 31))
-        self.iterationFixed.setStyleSheet("background: transparent;\n"
-"color: rgb(234, 255, 253);\n"
-"margin: 5px;\n"
-"font-size: 16px;\n"
-"font-family: \"Lucida Console\", \"Courier New\", monospace;\n"
-"color: rgb(234, 255, 253);\n"
-"border: none;")
-        self.iterationFixed.setText("")
-        self.iterationFixed.setObjectName("iterationFixed")
         self.tabWidget.addTab(self.tab_4, "")
         self.tab_3 = QtWidgets.QWidget()
         self.tab_3.setObjectName("tab_3")
@@ -362,7 +338,7 @@ class Ui_MainWindow(object):
 "border: none;")
         self.label_21.setObjectName("label_21")
         self.falseRoot = QtWidgets.QLabel(self.groupBox_3)
-        self.falseRoot.setGeometry(QtCore.QRect(310, 80, 141, 31))
+        self.falseRoot.setGeometry(QtCore.QRect(240, 80, 141, 31))
         self.falseRoot.setStyleSheet("background: transparent;\n"
 "color: rgb(234, 255, 253);\n"
 "margin: 5px;\n"
@@ -370,19 +346,7 @@ class Ui_MainWindow(object):
 "font-family: \"Lucida Console\", \"Courier New\", monospace;\n"
 "color: rgb(234, 255, 253);\n"
 "border: none;")
-        self.falseRoot.setText("")
         self.falseRoot.setObjectName("falseRoot")
-        self.iterationFalse = QtWidgets.QLabel(self.groupBox_3)
-        self.iterationFalse.setGeometry(QtCore.QRect(240, 80, 61, 31))
-        self.iterationFalse.setStyleSheet("background: transparent;\n"
-"color: rgb(234, 255, 253);\n"
-"margin: 5px;\n"
-"font-size: 16px;\n"
-"font-family: \"Lucida Console\", \"Courier New\", monospace;\n"
-"color: rgb(234, 255, 253);\n"
-"border: none;")
-        self.iterationFalse.setText("")
-        self.iterationFalse.setObjectName("iterationFalse")
         self.tabWidget.addTab(self.tab_3, "")
         self.tab_5 = QtWidgets.QWidget()
         self.tab_5.setObjectName("tab_5")
@@ -449,7 +413,7 @@ class Ui_MainWindow(object):
 "border: none;")
         self.label_25.setObjectName("label_25")
         self.newtonRoot = QtWidgets.QLabel(self.groupBox_4)
-        self.newtonRoot.setGeometry(QtCore.QRect(310, 80, 141, 31))
+        self.newtonRoot.setGeometry(QtCore.QRect(240, 80, 141, 31))
         self.newtonRoot.setStyleSheet("background: transparent;\n"
 "color: rgb(234, 255, 253);\n"
 "margin: 5px;\n"
@@ -457,19 +421,7 @@ class Ui_MainWindow(object):
 "font-family: \"Lucida Console\", \"Courier New\", monospace;\n"
 "color: rgb(234, 255, 253);\n"
 "border: none;")
-        self.newtonRoot.setText("")
         self.newtonRoot.setObjectName("newtonRoot")
-        self.iterationNewton = QtWidgets.QLabel(self.groupBox_4)
-        self.iterationNewton.setGeometry(QtCore.QRect(240, 80, 61, 31))
-        self.iterationNewton.setStyleSheet("background: transparent;\n"
-"color: rgb(234, 255, 253);\n"
-"margin: 5px;\n"
-"font-size: 16px;\n"
-"font-family: \"Lucida Console\", \"Courier New\", monospace;\n"
-"color: rgb(234, 255, 253);\n"
-"border: none;")
-        self.iterationNewton.setText("")
-        self.iterationNewton.setObjectName("iterationNewton")
         self.tabWidget.addTab(self.tab_5, "")
         self.tab_2 = QtWidgets.QWidget()
         self.tab_2.setObjectName("tab_2")
@@ -558,7 +510,7 @@ class Ui_MainWindow(object):
 "border: none;")
         self.label_27.setObjectName("label_27")
         self.secantRoot = QtWidgets.QLabel(self.groupBox_5)
-        self.secantRoot.setGeometry(QtCore.QRect(310, 80, 141, 31))
+        self.secantRoot.setGeometry(QtCore.QRect(240, 80, 141, 31))
         self.secantRoot.setStyleSheet("background: transparent;\n"
 "color: rgb(234, 255, 253);\n"
 "margin: 5px;\n"
@@ -566,19 +518,7 @@ class Ui_MainWindow(object):
 "font-family: \"Lucida Console\", \"Courier New\", monospace;\n"
 "color: rgb(234, 255, 253);\n"
 "border: none;")
-        self.secantRoot.setText("")
         self.secantRoot.setObjectName("secantRoot")
-        self.iterationFixed_2 = QtWidgets.QLabel(self.groupBox_5)
-        self.iterationFixed_2.setGeometry(QtCore.QRect(240, 80, 61, 31))
-        self.iterationFixed_2.setStyleSheet("background: transparent;\n"
-"color: rgb(234, 255, 253);\n"
-"margin: 5px;\n"
-"font-size: 16px;\n"
-"font-family: \"Lucida Console\", \"Courier New\", monospace;\n"
-"color: rgb(234, 255, 253);\n"
-"border: none;")
-        self.iterationFixed_2.setText("")
-        self.iterationFixed_2.setObjectName("iterationFixed_2")
         self.tabWidget.addTab(self.tab_2, "")
         self.label_5 = QtWidgets.QLabel(self.centralWidget)
         self.label_5.setGeometry(QtCore.QRect(440, 90, 161, 31))
@@ -647,7 +587,6 @@ class Ui_MainWindow(object):
 
         result = Bisection.mainFunc(function, maxIteration, epsilon, lowerBound, upperBound)
         self.bisectionRoot.setText(str(result))
-        self.iterationBisection.setText(str(Bisection.getFinalIter()))
 
     def RegularFalseCalcBtnClicked(self):
         # Same for all methods
@@ -696,9 +635,10 @@ class Ui_MainWindow(object):
         self.newtonRoot.setText(str(result))
 
 
+
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "Numerical Lab"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.label.setText(_translate("MainWindow", "Numerical Project"))
         self.label_2.setText(_translate("MainWindow", "Function:"))
         self.checkBox.setText(_translate("MainWindow", "Select from File"))
@@ -709,12 +649,14 @@ class Ui_MainWindow(object):
         self.bisectionShowIterBtn.setText(_translate("MainWindow", "Show Iterations"))
         self.bisectionShowGpBtn.setText(_translate("MainWindow", "Show graph"))
         self.label_19.setText(_translate("MainWindow", "Root Result:  X("))
+        self.bisectionRoot.setText(_translate("MainWindow", "0 ): 0"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.Bisection), _translate("MainWindow", "Bisection"))
         self.label_12.setText(_translate("MainWindow", "First Guess:"))
         self.fixedCalcBtn.setText(_translate("MainWindow", "Calculate"))
         self.fixedShowIterBtn.setText(_translate("MainWindow", "Show Iterations"))
         self.fixedShowGpBtn.setText(_translate("MainWindow", "Show graph"))
         self.label_14.setText(_translate("MainWindow", "Root Result:  X("))
+        self.fixedRoot.setText(_translate("MainWindow", "0 ): 0"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_4), _translate("MainWindow", "Fixed point"))
         self.label_18.setText(_translate("MainWindow", "Lower Bound:"))
         self.label_20.setText(_translate("MainWindow", "Upper Bound:"))
@@ -722,12 +664,14 @@ class Ui_MainWindow(object):
         self.falseShowIterBtn.setText(_translate("MainWindow", "Show Iterations"))
         self.falseShowGpBtn.setText(_translate("MainWindow", "Show graph"))
         self.label_21.setText(_translate("MainWindow", "Root Result:  X("))
+        self.falseRoot.setText(_translate("MainWindow", "0 ): 0"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_3), _translate("MainWindow", "False-position"))
         self.label_22.setText(_translate("MainWindow", "First Guess:"))
         self.newtonCalcBtn.setText(_translate("MainWindow", "Calculate"))
         self.newtonShowIterBtn.setText(_translate("MainWindow", "Show Iterations"))
         self.newtonShowGpBtn.setText(_translate("MainWindow", "Show graph"))
         self.label_25.setText(_translate("MainWindow", "Root Result:  X("))
+        self.newtonRoot.setText(_translate("MainWindow", "0 ): 0"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_5), _translate("MainWindow", "Newton-Raphson"))
         self.label_15.setText(_translate("MainWindow", "First Guess:"))
         self.label_24.setText(_translate("MainWindow", "Second Guess:"))
@@ -735,6 +679,7 @@ class Ui_MainWindow(object):
         self.secantShowIterBtn.setText(_translate("MainWindow", "Show Iterations"))
         self.secantShowGpBtn.setText(_translate("MainWindow", "Show graph"))
         self.label_27.setText(_translate("MainWindow", "Root Result:  X("))
+        self.secantRoot.setText(_translate("MainWindow", "0 ): 0"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), _translate("MainWindow", "Secant"))
         self.label_5.setText(_translate("MainWindow", "Max Iteration:"))
         self.label_6.setText(_translate("MainWindow", "Epsilon:"))

@@ -29,7 +29,7 @@ def newtonRaphson(xi, expr, epsilon, maxIteration):
     print("The value of the root is : ",
           "%.4f" % xi)
 
-    return '%.6f' %xi
+    return "%d ): %.6f" % (step, xi)
 
 
 def mainFunc(function, maxIteration, epsilon, xi):

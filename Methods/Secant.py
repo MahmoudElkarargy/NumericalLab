@@ -31,7 +31,7 @@ def secant(x0, x1, e, N, Function):
             break
 
         condition = abs(f(x2, Function)) > e
-    return '%0.6f' % x2
+    return "%d ): %.6f" % (step, x2)
 
 def mainFunc(expr, N, e, x0, x1):
 

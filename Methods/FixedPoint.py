@@ -33,7 +33,7 @@ def fixedPointIteration(function,x0, e, N,x):
 
     if flag == 1:
         print('\nRequired root is: %0.8f' % x1)
-        return '%0.6f' % x1
+        return "%d ): %.6f" % (step, x1)
     else:
         print('\nNot Convergent.')
         return 'None'

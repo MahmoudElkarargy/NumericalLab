@@ -348,7 +348,7 @@ border: none;</string>
       <widget class="QLabel" name="bisectionRoot">
        <property name="geometry">
         <rect>
-         <x>310</x>
+         <x>240</x>
          <y>80</y>
          <width>141</width>
          <height>31</height>
@@ -364,29 +364,7 @@ color: rgb(234, 255, 253);
 border: none;</string>
        </property>
        <property name="text">
-        <string/>
-       </property>
-      </widget>
-      <widget class="QLabel" name="iterationBisection">
-       <property name="geometry">
-        <rect>
-         <x>240</x>
-         <y>80</y>
-         <width>61</width>
-         <height>31</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background: transparent;
-color: rgb(234, 255, 253);
-margin: 5px;
-font-size: 16px;
-font-family: &quot;Lucida Console&quot;, &quot;Courier New&quot;, monospace;
-color: rgb(234, 255, 253);
-border: none;</string>
-       </property>
-       <property name="text">
-        <string/>
+        <string>0 ): 0</string>
        </property>
       </widget>
      </widget>
@@ -543,7 +521,7 @@ border: none;</string>
       <widget class="QLabel" name="fixedRoot">
        <property name="geometry">
         <rect>
-         <x>310</x>
+         <x>240</x>
          <y>80</y>
          <width>141</width>
          <height>31</height>
@@ -559,29 +537,7 @@ color: rgb(234, 255, 253);
 border: none;</string>
        </property>
        <property name="text">
-        <string/>
-       </property>
-      </widget>
-      <widget class="QLabel" name="iterationFixed">
-       <property name="geometry">
-        <rect>
-         <x>240</x>
-         <y>80</y>
-         <width>61</width>
-         <height>31</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background: transparent;
-color: rgb(234, 255, 253);
-margin: 5px;
-font-size: 16px;
-font-family: &quot;Lucida Console&quot;, &quot;Courier New&quot;, monospace;
-color: rgb(234, 255, 253);
-border: none;</string>
-       </property>
-       <property name="text">
-        <string/>
+        <string>0 ): 0</string>
        </property>
       </widget>
      </widget>
@@ -785,7 +741,7 @@ border: none;</string>
       <widget class="QLabel" name="falseRoot">
        <property name="geometry">
         <rect>
-         <x>310</x>
+         <x>240</x>
          <y>80</y>
          <width>141</width>
          <height>31</height>
@@ -801,29 +757,7 @@ color: rgb(234, 255, 253);
 border: none;</string>
        </property>
        <property name="text">
-        <string/>
-       </property>
-      </widget>
-      <widget class="QLabel" name="iterationFalse">
-       <property name="geometry">
-        <rect>
-         <x>240</x>
-         <y>80</y>
-         <width>61</width>
-         <height>31</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background: transparent;
-color: rgb(234, 255, 253);
-margin: 5px;
-font-size: 16px;
-font-family: &quot;Lucida Console&quot;, &quot;Courier New&quot;, monospace;
-color: rgb(234, 255, 253);
-border: none;</string>
-       </property>
-       <property name="text">
-        <string/>
+        <string>0 ): 0</string>
        </property>
       </widget>
      </widget>
@@ -980,7 +914,7 @@ border: none;</string>
       <widget class="QLabel" name="newtonRoot">
        <property name="geometry">
         <rect>
-         <x>310</x>
+         <x>240</x>
          <y>80</y>
          <width>141</width>
          <height>31</height>
@@ -996,29 +930,7 @@ color: rgb(234, 255, 253);
 border: none;</string>
        </property>
        <property name="text">
-        <string/>
-       </property>
-      </widget>
-      <widget class="QLabel" name="iterationNewton">
-       <property name="geometry">
-        <rect>
-         <x>240</x>
-         <y>80</y>
-         <width>61</width>
-         <height>31</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background: transparent;
-color: rgb(234, 255, 253);
-margin: 5px;
-font-size: 16px;
-font-family: &quot;Lucida Console&quot;, &quot;Courier New&quot;, monospace;
-color: rgb(234, 255, 253);
-border: none;</string>
-       </property>
-       <property name="text">
-        <string/>
+        <string>0 ): 0</string>
        </property>
       </widget>
      </widget>
@@ -1222,7 +1134,7 @@ border: none;</string>
       <widget class="QLabel" name="secantRoot">
        <property name="geometry">
         <rect>
-         <x>310</x>
+         <x>240</x>
          <y>80</y>
          <width>141</width>
          <height>31</height>
@@ -1238,29 +1150,7 @@ color: rgb(234, 255, 253);
 border: none;</string>
        </property>
        <property name="text">
-        <string/>
-       </property>
-      </widget>
-      <widget class="QLabel" name="iterationFixed_2">
-       <property name="geometry">
-        <rect>
-         <x>240</x>
-         <y>80</y>
-         <width>61</width>
-         <height>31</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background: transparent;
-color: rgb(234, 255, 253);
-margin: 5px;
-font-size: 16px;
-font-family: &quot;Lucida Console&quot;, &quot;Courier New&quot;, monospace;
-color: rgb(234, 255, 253);
-border: none;</string>
-       </property>
-       <property name="text">
-        <string/>
+        <string>0 ): 0</string>
        </property>
       </widget>
      </widget>

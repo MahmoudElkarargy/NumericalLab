@@ -15,7 +15,6 @@ def func(expr, value, x):
 	return expr.subs(x, value)
 
 iterationStr = "*** BISECTION METHOD ITERATIONS ***\n"
-finalIteration = 0
 
 # Prints root of func(x)
 # with error of EPSILON
@@ -24,9 +23,13 @@ def bisection(a, b, expr, maxIteration, Epsilon, x):
         print("You have not assumed right a and b\n")
         return
     c = a
-    step = 0
+    step = 1
     while ((b-a) >= Epsilon and step < maxIteration):
     	# Find middle point
+        print('Iteration(%d): X(lower) | f(X-lower) | X(upper) | f(X-upper) | X(mid) | f(X-mid)' % step)
+        print("\t\t\t %.6f \t %.6f \t  %.6f \t %.6f \t %.6f \t %.6f \n" % (
+        a, func(expr, a, x), b, func(expr, b, x), c, func(expr, c, x)))
+
         c = (a+b)/2
 
 		# Check if middle point is root
@@ -39,8 +42,6 @@ def bisection(a, b, expr, maxIteration, Epsilon, x):
         else:
             a = c
         step +=1
-        print('Iteration(%d): X(lower) | f(X-lower) | X(upper) | f(X-upper) | X(mid) | f(X-mid)' % step)
-        print("\t\t\t %.6f \t %.6f \t  %.6f \t %.6f \t %.6f \t %.6f \n"%(a, func(expr,a,x), b, func(expr,b,x), c, func(expr,c,x)))
 
         # iterationStr.append(str('Iteration(%d): X(lower) | f(X-lower) | X(upper) | f(X-upper) | X(mid) | f(X-mid)' % step))
         # iterationStr.append(str("\t\t\t %.6f \t %.6f \t  %.6f \t %.6f \t %.6f \t %.6f \n"%(a, func(expr,a,x), b, func(expr,b,x), c, func(expr,c,x))))
@@ -48,7 +49,7 @@ def bisection(a, b, expr, maxIteration, Epsilon, x):
     finalIteration = step
     print(finalIteration)
     # print(iterationStr)
-    return "%.6f"%c
+    return "%d ): %.6f"%(finalIteration,c)
 
 # Main code
 def mainFunc(function, maxIteration, epsilon, a, b):
@@ -56,8 +57,3 @@ def mainFunc(function, maxIteration, epsilon, a, b):
     expr = sympify(function)
     return bisection(a, b, expr, maxIteration, epsilon, x)
 
-def getFinalIter():
-    print(finalIteration)
-    return finalIteration
-def getIterationsDetails():
-    return iterationStr
