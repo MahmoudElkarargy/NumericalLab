@@ -1,16 +1,15 @@
 # Fixed Point Iteration Method
 # Importing math to use sqrt function
-import math
-from sympy import var
-from sympy import sympify
+from sympy import *
 
 def f(expr, value, x):
 	return expr.subs(x, value)
 
 
-# Re-writing f(x)=0 to x = g(x)
-def g(x):
-    return 1 / math.sqrt(1 + x)
+def derivFunc(expr, value):
+    x = var('x')
+    expr = diff(expr)
+    return expr.subs(x, value)
 
 
 # Implementing Fixed Point Iteration Method
@@ -20,7 +19,7 @@ def fixedPointIteration(function,x0, e, N,x):
     flag = 1
     condition = True
     while condition:
-        x1 = g(x0)
+        x1 = derivFunc(function,x0)
         print('Iteration-%d, x1 = %0.6f and f(x1) = %0.6f' % (step, x1, f(function,x1,x)))
         x0 = x1
 

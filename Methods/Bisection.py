@@ -57,6 +57,7 @@ def mainFunc(function, maxIteration, epsilon, a, b):
     return bisection(a, b, expr, maxIteration, epsilon, x)
 
 def getFinalIter():
+    print(finalIteration)
     return finalIteration
 def getIterationsDetails():
     return iterationStr

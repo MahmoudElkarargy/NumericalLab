@@ -14,24 +14,26 @@ def derivFunc(expr, value):
 
 
 # Function to find the root
-def newtonRaphson(xi, expr, Epsilon):
+def newtonRaphson(xi, expr, epsilon, maxIteration):
     h = func(expr, xi) / derivFunc(expr, xi)
 
-    while abs(h) >= Epsilon:
+    step = 1
+    while abs(h) >= epsilon and step < maxIteration:
+        print('Iteration-%d, xi = %0.6f and f(xi) = %0.6f' % (step, xi, func(expr, xi)))
         h = func(expr, xi) / derivFunc(expr, xi)
 
         # x(i+1) = x(i) - f(x) / f'(x)
         xi = xi - h
+        step += 1
 
     print("The value of the root is : ",
           "%.4f" % xi)
 
+    return '%.6f' %xi
 
-def mainFunc():
-    function = input("Enter your function: ")
+
+def mainFunc(function, maxIteration, epsilon, xi):
     expr = sympify(function)
-    xi = int(input("Enter initial value : "))
-    Epsilon = float(input("Enter Epsilon: "))
-    newtonRaphson(xi, expr, Epsilon)
+    return newtonRaphson(xi, expr, epsilon, maxIteration)
 
 
