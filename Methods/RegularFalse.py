@@ -51,10 +51,5 @@ def regulaFalsi(a, b, expr, x,MAX_ITER, EPSILON):
 def mainFunc(function, maxIteration, epsilon, a, b):
     x = var('x')  # the possible variable names must be known beforehand...
     expr = sympify(function)
-    sol = solve(expr, x)
-    if sol==LambertW(1):
-        sol=0.5671432904097
-    print('\n Exact root is: %0.8f' % sol[0])
-    print("bsmallah")
     return regulaFalsi(a, b, expr, x, maxIteration, epsilon)
 
