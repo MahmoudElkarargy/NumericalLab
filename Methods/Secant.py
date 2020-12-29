@@ -32,7 +32,7 @@ def secant(x0, x1, e, N, Function):
             print('Not Convergent!')
             break
 
-        condition = abs((x1-x0)/x1) > e
+        condition = abs((x1-x0)/x1) >= e
     end_time = time.time()
     t4= end_time - start_time
     print("execution time for Secant=", "%.6f" " sec" % t4)

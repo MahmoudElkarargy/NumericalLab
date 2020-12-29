@@ -29,13 +29,15 @@ def bisection(a, b, expr, maxIteration, Epsilon, x):
     c = a
     step = 1
     start_time = time.time()
-    while ((b-a) >= Epsilon and step < maxIteration):
+    while (step < maxIteration):
     	# Find middle point
         print('Iteration(%d): X(lower) | f(X-lower) | X(upper) | f(X-upper) | X(mid) | f(X-mid)' % step)
         print("\t\t\t %.6f \t %.6f \t  %.6f \t %.6f \t %.6f \t %.6f \n" % (
         a, func(expr, a, x), b, func(expr, b, x), c, func(expr, c, x)))
-
+        c_old=c
         c = (a+b)/2
+        if(abs((c-c_old)/c)<Epsilon):
+            break
 
 		# Check if middle point is root
         if (func(expr,c, x) == 0.0):
