@@ -41,5 +41,10 @@ def secant(x0, x1, e, N, Function):
 def mainFunc(expr, N, e, x0, x1):
 
     Function = sympify(expr)
+    x = var('x')
+    sol = solve(Function, x)
+    if sol==LambertW(1):
+        sol=0.5671432904097
+    print('\n Exact root is: %0.8f' % sol[0])
     # Starting Secant Method
     return secant(x0, x1, e, N, Function)

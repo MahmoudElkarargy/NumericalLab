@@ -41,6 +41,11 @@ def newtonRaphson(xi, expr, epsilon, maxIteration):
 
 def mainFunc(function, maxIteration, epsilon, xi):
     expr = sympify(function)
+    x = var('x')
+    sol = solve(expr, x)
+    if sol==LambertW(1):
+        sol=0.5671432904097
+    print('\n Exact root is: %0.8f' % sol[0])
     return newtonRaphson(xi, expr, epsilon, maxIteration)
 
 

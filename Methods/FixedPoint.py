@@ -55,5 +55,10 @@ def fixedPointIteration(function,x0, e, N,x):
 def mainFunc(function, N, e, x0):
     x = var('x')  # the possible variable names must be known beforehand...
     expr = sympify(function)
+
+    sol = solve(Function, x)
+    if sol==LambertW(1):
+        sol=0.5671432904097
+    print('\n Exact root is: %0.8f' % sol[0])
     # Starting Newton Raphson Method
     return fixedPointIteration(expr, x0, e, N,x)
