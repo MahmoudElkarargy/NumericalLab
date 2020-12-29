@@ -147,7 +147,7 @@ font-family: &quot;Lucida Console&quot;, &quot;Courier New&quot;, monospace;
 background-color: rgb(0, 0, 40);</string>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>4</number>
     </property>
     <widget class="QWidget" name="Bisection">
      <attribute name="title">
@@ -267,7 +267,7 @@ color: rgb(234, 255, 253);</string>
        <property name="geometry">
         <rect>
          <x>40</x>
-         <y>140</y>
+         <y>150</y>
          <width>112</width>
          <height>32</height>
         </rect>
@@ -287,7 +287,7 @@ color: rgb(0, 0, 40);</string>
        <property name="geometry">
         <rect>
          <x>180</x>
-         <y>140</y>
+         <y>150</y>
          <width>161</width>
          <height>32</height>
         </rect>
@@ -307,7 +307,7 @@ color: rgb(0, 0, 40);</string>
        <property name="geometry">
         <rect>
          <x>370</x>
-         <y>140</y>
+         <y>150</y>
          <width>112</width>
          <height>32</height>
         </rect>
@@ -327,7 +327,7 @@ color: rgb(0, 0, 40);</string>
        <property name="geometry">
         <rect>
          <x>80</x>
-         <y>80</y>
+         <y>60</y>
          <width>171</width>
          <height>31</height>
         </rect>
@@ -349,7 +349,7 @@ border: none;</string>
        <property name="geometry">
         <rect>
          <x>240</x>
-         <y>80</y>
+         <y>60</y>
          <width>141</width>
          <height>31</height>
         </rect>
@@ -365,6 +365,94 @@ border: none;</string>
        </property>
        <property name="text">
         <string>0 ): 0</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_23">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>100</y>
+         <width>131</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background: transparent;
+color: rgb(234, 255, 253);
+margin: 5px;
+font-size: 14px;
+font-family: &quot;Lucida Console&quot;, &quot;Courier New&quot;, monospace;
+color: rgb(234, 255, 253);
+border: none;</string>
+       </property>
+       <property name="text">
+        <string>Excact Root X:</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_26">
+       <property name="geometry">
+        <rect>
+         <x>260</x>
+         <y>100</y>
+         <width>141</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background: transparent;
+color: rgb(234, 255, 253);
+margin: 5px;
+font-size: 14px;
+font-family: &quot;Lucida Console&quot;, &quot;Courier New&quot;, monospace;
+color: rgb(234, 255, 253);
+border: none;</string>
+       </property>
+       <property name="text">
+        <string>Execution Time:</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="excactRootBisection">
+       <property name="geometry">
+        <rect>
+         <x>140</x>
+         <y>100</y>
+         <width>101</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background: transparent;
+color: rgb(234, 255, 253);
+margin: 5px;
+font-size: 14px;
+font-family: &quot;Lucida Console&quot;, &quot;Courier New&quot;, monospace;
+color: rgb(234, 255, 253);
+border: none;</string>
+       </property>
+       <property name="text">
+        <string>0</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="etBisection">
+       <property name="geometry">
+        <rect>
+         <x>390</x>
+         <y>100</y>
+         <width>101</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background: transparent;
+color: rgb(234, 255, 253);
+margin: 5px;
+font-size: 14px;
+font-family: &quot;Lucida Console&quot;, &quot;Courier New&quot;, monospace;
+color: rgb(234, 255, 253);
+border: none;</string>
+       </property>
+       <property name="text">
+        <string>0 ms</string>
        </property>
       </widget>
      </widget>
@@ -440,7 +528,7 @@ color: rgb(234, 255, 253);</string>
        <property name="geometry">
         <rect>
          <x>40</x>
-         <y>140</y>
+         <y>150</y>
          <width>112</width>
          <height>32</height>
         </rect>
@@ -460,7 +548,7 @@ color: rgb(0, 0, 40);</string>
        <property name="geometry">
         <rect>
          <x>180</x>
-         <y>140</y>
+         <y>150</y>
          <width>161</width>
          <height>32</height>
         </rect>
@@ -480,7 +568,7 @@ color: rgb(0, 0, 40);</string>
        <property name="geometry">
         <rect>
          <x>370</x>
-         <y>140</y>
+         <y>150</y>
          <width>112</width>
          <height>32</height>
         </rect>
@@ -500,7 +588,7 @@ color: rgb(0, 0, 40);</string>
        <property name="geometry">
         <rect>
          <x>80</x>
-         <y>80</y>
+         <y>60</y>
          <width>171</width>
          <height>31</height>
         </rect>
@@ -522,7 +610,7 @@ border: none;</string>
        <property name="geometry">
         <rect>
          <x>240</x>
-         <y>80</y>
+         <y>60</y>
          <width>141</width>
          <height>31</height>
         </rect>
@@ -538,6 +626,94 @@ border: none;</string>
        </property>
        <property name="text">
         <string>0 ): 0</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_28">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>100</y>
+         <width>131</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background: transparent;
+color: rgb(234, 255, 253);
+margin: 5px;
+font-size: 14px;
+font-family: &quot;Lucida Console&quot;, &quot;Courier New&quot;, monospace;
+color: rgb(234, 255, 253);
+border: none;</string>
+       </property>
+       <property name="text">
+        <string>Excact Root X:</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="excactRootFixed">
+       <property name="geometry">
+        <rect>
+         <x>140</x>
+         <y>100</y>
+         <width>101</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background: transparent;
+color: rgb(234, 255, 253);
+margin: 5px;
+font-size: 14px;
+font-family: &quot;Lucida Console&quot;, &quot;Courier New&quot;, monospace;
+color: rgb(234, 255, 253);
+border: none;</string>
+       </property>
+       <property name="text">
+        <string>0</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_29">
+       <property name="geometry">
+        <rect>
+         <x>260</x>
+         <y>100</y>
+         <width>141</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background: transparent;
+color: rgb(234, 255, 253);
+margin: 5px;
+font-size: 14px;
+font-family: &quot;Lucida Console&quot;, &quot;Courier New&quot;, monospace;
+color: rgb(234, 255, 253);
+border: none;</string>
+       </property>
+       <property name="text">
+        <string>Execution Time:</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="etFixed">
+       <property name="geometry">
+        <rect>
+         <x>390</x>
+         <y>100</y>
+         <width>101</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background: transparent;
+color: rgb(234, 255, 253);
+margin: 5px;
+font-size: 14px;
+font-family: &quot;Lucida Console&quot;, &quot;Courier New&quot;, monospace;
+color: rgb(234, 255, 253);
+border: none;</string>
+       </property>
+       <property name="text">
+        <string>0 ms</string>
        </property>
       </widget>
      </widget>
@@ -660,7 +836,7 @@ color: rgb(234, 255, 253);</string>
        <property name="geometry">
         <rect>
          <x>40</x>
-         <y>140</y>
+         <y>150</y>
          <width>112</width>
          <height>32</height>
         </rect>
@@ -680,7 +856,7 @@ color: rgb(0, 0, 40);</string>
        <property name="geometry">
         <rect>
          <x>180</x>
-         <y>140</y>
+         <y>150</y>
          <width>161</width>
          <height>32</height>
         </rect>
@@ -700,7 +876,7 @@ color: rgb(0, 0, 40);</string>
        <property name="geometry">
         <rect>
          <x>370</x>
-         <y>140</y>
+         <y>150</y>
          <width>112</width>
          <height>32</height>
         </rect>
@@ -720,7 +896,7 @@ color: rgb(0, 0, 40);</string>
        <property name="geometry">
         <rect>
          <x>80</x>
-         <y>80</y>
+         <y>60</y>
          <width>171</width>
          <height>31</height>
         </rect>
@@ -742,7 +918,7 @@ border: none;</string>
        <property name="geometry">
         <rect>
          <x>240</x>
-         <y>80</y>
+         <y>60</y>
          <width>141</width>
          <height>31</height>
         </rect>
@@ -760,6 +936,94 @@ border: none;</string>
         <string>0 ): 0</string>
        </property>
       </widget>
+      <widget class="QLabel" name="label_30">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>100</y>
+         <width>131</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background: transparent;
+color: rgb(234, 255, 253);
+margin: 5px;
+font-size: 14px;
+font-family: &quot;Lucida Console&quot;, &quot;Courier New&quot;, monospace;
+color: rgb(234, 255, 253);
+border: none;</string>
+       </property>
+       <property name="text">
+        <string>Excact Root X:</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="excactRootFalse">
+       <property name="geometry">
+        <rect>
+         <x>140</x>
+         <y>100</y>
+         <width>101</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background: transparent;
+color: rgb(234, 255, 253);
+margin: 5px;
+font-size: 14px;
+font-family: &quot;Lucida Console&quot;, &quot;Courier New&quot;, monospace;
+color: rgb(234, 255, 253);
+border: none;</string>
+       </property>
+       <property name="text">
+        <string>0</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_31">
+       <property name="geometry">
+        <rect>
+         <x>260</x>
+         <y>100</y>
+         <width>141</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background: transparent;
+color: rgb(234, 255, 253);
+margin: 5px;
+font-size: 14px;
+font-family: &quot;Lucida Console&quot;, &quot;Courier New&quot;, monospace;
+color: rgb(234, 255, 253);
+border: none;</string>
+       </property>
+       <property name="text">
+        <string>Execution Time:</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QLabel" name="etFalse">
+      <property name="geometry">
+       <rect>
+        <x>390</x>
+        <y>100</y>
+        <width>101</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background: transparent;
+color: rgb(234, 255, 253);
+margin: 5px;
+font-size: 14px;
+font-family: &quot;Lucida Console&quot;, &quot;Courier New&quot;, monospace;
+color: rgb(234, 255, 253);
+border: none;</string>
+      </property>
+      <property name="text">
+       <string>0 ms</string>
+      </property>
      </widget>
     </widget>
     <widget class="QWidget" name="tab_5">
@@ -833,7 +1097,7 @@ color: rgb(234, 255, 253);</string>
        <property name="geometry">
         <rect>
          <x>40</x>
-         <y>140</y>
+         <y>150</y>
          <width>112</width>
          <height>32</height>
         </rect>
@@ -853,7 +1117,7 @@ color: rgb(0, 0, 40);</string>
        <property name="geometry">
         <rect>
          <x>180</x>
-         <y>140</y>
+         <y>150</y>
          <width>161</width>
          <height>32</height>
         </rect>
@@ -873,7 +1137,7 @@ color: rgb(0, 0, 40);</string>
        <property name="geometry">
         <rect>
          <x>370</x>
-         <y>140</y>
+         <y>150</y>
          <width>112</width>
          <height>32</height>
         </rect>
@@ -893,7 +1157,7 @@ color: rgb(0, 0, 40);</string>
        <property name="geometry">
         <rect>
          <x>80</x>
-         <y>80</y>
+         <y>60</y>
          <width>191</width>
          <height>31</height>
         </rect>
@@ -915,7 +1179,7 @@ border: none;</string>
        <property name="geometry">
         <rect>
          <x>240</x>
-         <y>80</y>
+         <y>60</y>
          <width>141</width>
          <height>31</height>
         </rect>
@@ -931,6 +1195,94 @@ border: none;</string>
        </property>
        <property name="text">
         <string>0 ): 0</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_32">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>100</y>
+         <width>131</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background: transparent;
+color: rgb(234, 255, 253);
+margin: 5px;
+font-size: 14px;
+font-family: &quot;Lucida Console&quot;, &quot;Courier New&quot;, monospace;
+color: rgb(234, 255, 253);
+border: none;</string>
+       </property>
+       <property name="text">
+        <string>Excact Root X:</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="excactRootNewton">
+       <property name="geometry">
+        <rect>
+         <x>140</x>
+         <y>100</y>
+         <width>101</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background: transparent;
+color: rgb(234, 255, 253);
+margin: 5px;
+font-size: 14px;
+font-family: &quot;Lucida Console&quot;, &quot;Courier New&quot;, monospace;
+color: rgb(234, 255, 253);
+border: none;</string>
+       </property>
+       <property name="text">
+        <string>0</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_33">
+       <property name="geometry">
+        <rect>
+         <x>260</x>
+         <y>100</y>
+         <width>141</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background: transparent;
+color: rgb(234, 255, 253);
+margin: 5px;
+font-size: 14px;
+font-family: &quot;Lucida Console&quot;, &quot;Courier New&quot;, monospace;
+color: rgb(234, 255, 253);
+border: none;</string>
+       </property>
+       <property name="text">
+        <string>Execution Time:</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="etNewton">
+       <property name="geometry">
+        <rect>
+         <x>390</x>
+         <y>100</y>
+         <width>101</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background: transparent;
+color: rgb(234, 255, 253);
+margin: 5px;
+font-size: 14px;
+font-family: &quot;Lucida Console&quot;, &quot;Courier New&quot;, monospace;
+color: rgb(234, 255, 253);
+border: none;</string>
+       </property>
+       <property name="text">
+        <string>0 ms</string>
        </property>
       </widget>
      </widget>
@@ -1053,7 +1405,7 @@ color: rgb(234, 255, 253);</string>
        <property name="geometry">
         <rect>
          <x>40</x>
-         <y>140</y>
+         <y>150</y>
          <width>112</width>
          <height>32</height>
         </rect>
@@ -1073,7 +1425,7 @@ color: rgb(0, 0, 40);</string>
        <property name="geometry">
         <rect>
          <x>180</x>
-         <y>140</y>
+         <y>150</y>
          <width>161</width>
          <height>32</height>
         </rect>
@@ -1093,7 +1445,7 @@ color: rgb(0, 0, 40);</string>
        <property name="geometry">
         <rect>
          <x>370</x>
-         <y>140</y>
+         <y>150</y>
          <width>112</width>
          <height>32</height>
         </rect>
@@ -1113,7 +1465,7 @@ color: rgb(0, 0, 40);</string>
        <property name="geometry">
         <rect>
          <x>80</x>
-         <y>80</y>
+         <y>60</y>
          <width>171</width>
          <height>31</height>
         </rect>
@@ -1135,7 +1487,7 @@ border: none;</string>
        <property name="geometry">
         <rect>
          <x>240</x>
-         <y>80</y>
+         <y>60</y>
          <width>141</width>
          <height>31</height>
         </rect>
@@ -1151,6 +1503,94 @@ border: none;</string>
        </property>
        <property name="text">
         <string>0 ): 0</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_34">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>100</y>
+         <width>131</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background: transparent;
+color: rgb(234, 255, 253);
+margin: 5px;
+font-size: 14px;
+font-family: &quot;Lucida Console&quot;, &quot;Courier New&quot;, monospace;
+color: rgb(234, 255, 253);
+border: none;</string>
+       </property>
+       <property name="text">
+        <string>Excact Root X:</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="excactRootSecant">
+       <property name="geometry">
+        <rect>
+         <x>140</x>
+         <y>100</y>
+         <width>101</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background: transparent;
+color: rgb(234, 255, 253);
+margin: 5px;
+font-size: 14px;
+font-family: &quot;Lucida Console&quot;, &quot;Courier New&quot;, monospace;
+color: rgb(234, 255, 253);
+border: none;</string>
+       </property>
+       <property name="text">
+        <string>0</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_35">
+       <property name="geometry">
+        <rect>
+         <x>260</x>
+         <y>100</y>
+         <width>141</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background: transparent;
+color: rgb(234, 255, 253);
+margin: 5px;
+font-size: 14px;
+font-family: &quot;Lucida Console&quot;, &quot;Courier New&quot;, monospace;
+color: rgb(234, 255, 253);
+border: none;</string>
+       </property>
+       <property name="text">
+        <string>Execution Time:</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="etSecant">
+       <property name="geometry">
+        <rect>
+         <x>390</x>
+         <y>100</y>
+         <width>101</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background: transparent;
+color: rgb(234, 255, 253);
+margin: 5px;
+font-size: 14px;
+font-family: &quot;Lucida Console&quot;, &quot;Courier New&quot;, monospace;
+color: rgb(234, 255, 253);
+border: none;</string>
+       </property>
+       <property name="text">
+        <string>0 ms</string>
        </property>
       </widget>
      </widget>

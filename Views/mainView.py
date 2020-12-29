@@ -12,7 +12,9 @@ import Methods.Bisection as Bisection
 import Methods.RegularFalse as RegularFalse
 import Methods.Secant as Secant
 import Methods.FixedPoint as Fixed
-import Methods.newton as newton
+import Methods.Newton as Newton
+import Methods.Excact as Excact
+import time
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -132,7 +134,7 @@ class Ui_MainWindow(object):
         self.bisectionUpperBound.setText("")
         self.bisectionUpperBound.setObjectName("bisectionUpperBound")
         self.bisectionCalcBtn = QtWidgets.QPushButton(self.groupBox_2)
-        self.bisectionCalcBtn.setGeometry(QtCore.QRect(40, 140, 112, 32))
+        self.bisectionCalcBtn.setGeometry(QtCore.QRect(40, 150, 112, 32))
         self.bisectionCalcBtn.setStyleSheet("border-radius: 50px;\n"
 "background-color: rgb(234, 255, 253);\n"
 "font-size: 14px;\n"
@@ -140,7 +142,7 @@ class Ui_MainWindow(object):
 "color: rgb(0, 0, 40);")
         self.bisectionCalcBtn.setObjectName("bisectionCalcBtn")
         self.bisectionShowIterBtn = QtWidgets.QPushButton(self.groupBox_2)
-        self.bisectionShowIterBtn.setGeometry(QtCore.QRect(180, 140, 161, 32))
+        self.bisectionShowIterBtn.setGeometry(QtCore.QRect(180, 150, 161, 32))
         self.bisectionShowIterBtn.setStyleSheet("border-radius: 50px;\n"
 "background-color: rgb(234, 255, 253);\n"
 "font-size: 14px;\n"
@@ -148,7 +150,7 @@ class Ui_MainWindow(object):
 "color: rgb(0, 0, 40);")
         self.bisectionShowIterBtn.setObjectName("bisectionShowIterBtn")
         self.bisectionShowGpBtn = QtWidgets.QPushButton(self.groupBox_2)
-        self.bisectionShowGpBtn.setGeometry(QtCore.QRect(370, 140, 112, 32))
+        self.bisectionShowGpBtn.setGeometry(QtCore.QRect(370, 150, 112, 32))
         self.bisectionShowGpBtn.setStyleSheet("border-radius: 50px;\n"
 "background-color: rgb(234, 255, 253);\n"
 "font-size: 14px;\n"
@@ -156,7 +158,7 @@ class Ui_MainWindow(object):
 "color: rgb(0, 0, 40);")
         self.bisectionShowGpBtn.setObjectName("bisectionShowGpBtn")
         self.label_19 = QtWidgets.QLabel(self.groupBox_2)
-        self.label_19.setGeometry(QtCore.QRect(80, 80, 171, 31))
+        self.label_19.setGeometry(QtCore.QRect(80, 60, 171, 31))
         self.label_19.setStyleSheet("background: transparent;\n"
 "color: rgb(234, 255, 253);\n"
 "margin: 5px;\n"
@@ -166,7 +168,7 @@ class Ui_MainWindow(object):
 "border: none;")
         self.label_19.setObjectName("label_19")
         self.bisectionRoot = QtWidgets.QLabel(self.groupBox_2)
-        self.bisectionRoot.setGeometry(QtCore.QRect(240, 80, 141, 31))
+        self.bisectionRoot.setGeometry(QtCore.QRect(240, 60, 141, 31))
         self.bisectionRoot.setStyleSheet("background: transparent;\n"
 "color: rgb(234, 255, 253);\n"
 "margin: 5px;\n"
@@ -175,6 +177,46 @@ class Ui_MainWindow(object):
 "color: rgb(234, 255, 253);\n"
 "border: none;")
         self.bisectionRoot.setObjectName("bisectionRoot")
+        self.label_23 = QtWidgets.QLabel(self.groupBox_2)
+        self.label_23.setGeometry(QtCore.QRect(20, 100, 131, 31))
+        self.label_23.setStyleSheet("background: transparent;\n"
+"color: rgb(234, 255, 253);\n"
+"margin: 5px;\n"
+"font-size: 14px;\n"
+"font-family: \"Lucida Console\", \"Courier New\", monospace;\n"
+"color: rgb(234, 255, 253);\n"
+"border: none;")
+        self.label_23.setObjectName("label_23")
+        self.label_26 = QtWidgets.QLabel(self.groupBox_2)
+        self.label_26.setGeometry(QtCore.QRect(260, 100, 141, 31))
+        self.label_26.setStyleSheet("background: transparent;\n"
+"color: rgb(234, 255, 253);\n"
+"margin: 5px;\n"
+"font-size: 14px;\n"
+"font-family: \"Lucida Console\", \"Courier New\", monospace;\n"
+"color: rgb(234, 255, 253);\n"
+"border: none;")
+        self.label_26.setObjectName("label_26")
+        self.excactRootBisection = QtWidgets.QLabel(self.groupBox_2)
+        self.excactRootBisection.setGeometry(QtCore.QRect(140, 100, 101, 31))
+        self.excactRootBisection.setStyleSheet("background: transparent;\n"
+"color: rgb(234, 255, 253);\n"
+"margin: 5px;\n"
+"font-size: 14px;\n"
+"font-family: \"Lucida Console\", \"Courier New\", monospace;\n"
+"color: rgb(234, 255, 253);\n"
+"border: none;")
+        self.excactRootBisection.setObjectName("excactRootBisection")
+        self.etBisection = QtWidgets.QLabel(self.groupBox_2)
+        self.etBisection.setGeometry(QtCore.QRect(390, 100, 101, 31))
+        self.etBisection.setStyleSheet("background: transparent;\n"
+"color: rgb(234, 255, 253);\n"
+"margin: 5px;\n"
+"font-size: 14px;\n"
+"font-family: \"Lucida Console\", \"Courier New\", monospace;\n"
+"color: rgb(234, 255, 253);\n"
+"border: none;")
+        self.etBisection.setObjectName("etBisection")
         self.tabWidget.addTab(self.Bisection, "")
         self.tab_4 = QtWidgets.QWidget()
         self.tab_4.setObjectName("tab_4")
@@ -207,7 +249,7 @@ class Ui_MainWindow(object):
         self.fixedFirstGuess.setText("")
         self.fixedFirstGuess.setObjectName("fixedFirstGuess")
         self.fixedCalcBtn = QtWidgets.QPushButton(self.groupBox)
-        self.fixedCalcBtn.setGeometry(QtCore.QRect(40, 140, 112, 32))
+        self.fixedCalcBtn.setGeometry(QtCore.QRect(40, 150, 112, 32))
         self.fixedCalcBtn.setStyleSheet("border-radius: 50px;\n"
 "background-color: rgb(234, 255, 253);\n"
 "font-size: 14px;\n"
@@ -215,7 +257,7 @@ class Ui_MainWindow(object):
 "color: rgb(0, 0, 40);")
         self.fixedCalcBtn.setObjectName("fixedCalcBtn")
         self.fixedShowIterBtn = QtWidgets.QPushButton(self.groupBox)
-        self.fixedShowIterBtn.setGeometry(QtCore.QRect(180, 140, 161, 32))
+        self.fixedShowIterBtn.setGeometry(QtCore.QRect(180, 150, 161, 32))
         self.fixedShowIterBtn.setStyleSheet("border-radius: 50px;\n"
 "background-color: rgb(234, 255, 253);\n"
 "font-size: 14px;\n"
@@ -223,7 +265,7 @@ class Ui_MainWindow(object):
 "color: rgb(0, 0, 40);")
         self.fixedShowIterBtn.setObjectName("fixedShowIterBtn")
         self.fixedShowGpBtn = QtWidgets.QPushButton(self.groupBox)
-        self.fixedShowGpBtn.setGeometry(QtCore.QRect(370, 140, 112, 32))
+        self.fixedShowGpBtn.setGeometry(QtCore.QRect(370, 150, 112, 32))
         self.fixedShowGpBtn.setStyleSheet("border-radius: 50px;\n"
 "background-color: rgb(234, 255, 253);\n"
 "font-size: 14px;\n"
@@ -231,7 +273,7 @@ class Ui_MainWindow(object):
 "color: rgb(0, 0, 40);")
         self.fixedShowGpBtn.setObjectName("fixedShowGpBtn")
         self.label_14 = QtWidgets.QLabel(self.groupBox)
-        self.label_14.setGeometry(QtCore.QRect(80, 80, 171, 31))
+        self.label_14.setGeometry(QtCore.QRect(80, 60, 171, 31))
         self.label_14.setStyleSheet("background: transparent;\n"
 "color: rgb(234, 255, 253);\n"
 "margin: 5px;\n"
@@ -241,7 +283,7 @@ class Ui_MainWindow(object):
 "border: none;")
         self.label_14.setObjectName("label_14")
         self.fixedRoot = QtWidgets.QLabel(self.groupBox)
-        self.fixedRoot.setGeometry(QtCore.QRect(240, 80, 141, 31))
+        self.fixedRoot.setGeometry(QtCore.QRect(240, 60, 141, 31))
         self.fixedRoot.setStyleSheet("background: transparent;\n"
 "color: rgb(234, 255, 253);\n"
 "margin: 5px;\n"
@@ -250,6 +292,46 @@ class Ui_MainWindow(object):
 "color: rgb(234, 255, 253);\n"
 "border: none;")
         self.fixedRoot.setObjectName("fixedRoot")
+        self.label_28 = QtWidgets.QLabel(self.groupBox)
+        self.label_28.setGeometry(QtCore.QRect(20, 100, 131, 31))
+        self.label_28.setStyleSheet("background: transparent;\n"
+"color: rgb(234, 255, 253);\n"
+"margin: 5px;\n"
+"font-size: 14px;\n"
+"font-family: \"Lucida Console\", \"Courier New\", monospace;\n"
+"color: rgb(234, 255, 253);\n"
+"border: none;")
+        self.label_28.setObjectName("label_28")
+        self.excactRootFixed = QtWidgets.QLabel(self.groupBox)
+        self.excactRootFixed.setGeometry(QtCore.QRect(140, 100, 101, 31))
+        self.excactRootFixed.setStyleSheet("background: transparent;\n"
+"color: rgb(234, 255, 253);\n"
+"margin: 5px;\n"
+"font-size: 14px;\n"
+"font-family: \"Lucida Console\", \"Courier New\", monospace;\n"
+"color: rgb(234, 255, 253);\n"
+"border: none;")
+        self.excactRootFixed.setObjectName("excactRootFixed")
+        self.label_29 = QtWidgets.QLabel(self.groupBox)
+        self.label_29.setGeometry(QtCore.QRect(260, 100, 141, 31))
+        self.label_29.setStyleSheet("background: transparent;\n"
+"color: rgb(234, 255, 253);\n"
+"margin: 5px;\n"
+"font-size: 14px;\n"
+"font-family: \"Lucida Console\", \"Courier New\", monospace;\n"
+"color: rgb(234, 255, 253);\n"
+"border: none;")
+        self.label_29.setObjectName("label_29")
+        self.etFixed = QtWidgets.QLabel(self.groupBox)
+        self.etFixed.setGeometry(QtCore.QRect(390, 100, 101, 31))
+        self.etFixed.setStyleSheet("background: transparent;\n"
+"color: rgb(234, 255, 253);\n"
+"margin: 5px;\n"
+"font-size: 14px;\n"
+"font-family: \"Lucida Console\", \"Courier New\", monospace;\n"
+"color: rgb(234, 255, 253);\n"
+"border: none;")
+        self.etFixed.setObjectName("etFixed")
         self.tabWidget.addTab(self.tab_4, "")
         self.tab_3 = QtWidgets.QWidget()
         self.tab_3.setObjectName("tab_3")
@@ -304,7 +386,7 @@ class Ui_MainWindow(object):
         self.falseUpperBound.setText("")
         self.falseUpperBound.setObjectName("falseUpperBound")
         self.falseCalcBtn = QtWidgets.QPushButton(self.groupBox_3)
-        self.falseCalcBtn.setGeometry(QtCore.QRect(40, 140, 112, 32))
+        self.falseCalcBtn.setGeometry(QtCore.QRect(40, 150, 112, 32))
         self.falseCalcBtn.setStyleSheet("border-radius: 50px;\n"
 "background-color: rgb(234, 255, 253);\n"
 "font-size: 14px;\n"
@@ -312,7 +394,7 @@ class Ui_MainWindow(object):
 "color: rgb(0, 0, 40);")
         self.falseCalcBtn.setObjectName("falseCalcBtn")
         self.falseShowIterBtn = QtWidgets.QPushButton(self.groupBox_3)
-        self.falseShowIterBtn.setGeometry(QtCore.QRect(180, 140, 161, 32))
+        self.falseShowIterBtn.setGeometry(QtCore.QRect(180, 150, 161, 32))
         self.falseShowIterBtn.setStyleSheet("border-radius: 50px;\n"
 "background-color: rgb(234, 255, 253);\n"
 "font-size: 14px;\n"
@@ -320,7 +402,7 @@ class Ui_MainWindow(object):
 "color: rgb(0, 0, 40);")
         self.falseShowIterBtn.setObjectName("falseShowIterBtn")
         self.falseShowGpBtn = QtWidgets.QPushButton(self.groupBox_3)
-        self.falseShowGpBtn.setGeometry(QtCore.QRect(370, 140, 112, 32))
+        self.falseShowGpBtn.setGeometry(QtCore.QRect(370, 150, 112, 32))
         self.falseShowGpBtn.setStyleSheet("border-radius: 50px;\n"
 "background-color: rgb(234, 255, 253);\n"
 "font-size: 14px;\n"
@@ -328,7 +410,7 @@ class Ui_MainWindow(object):
 "color: rgb(0, 0, 40);")
         self.falseShowGpBtn.setObjectName("falseShowGpBtn")
         self.label_21 = QtWidgets.QLabel(self.groupBox_3)
-        self.label_21.setGeometry(QtCore.QRect(80, 80, 171, 31))
+        self.label_21.setGeometry(QtCore.QRect(80, 60, 171, 31))
         self.label_21.setStyleSheet("background: transparent;\n"
 "color: rgb(234, 255, 253);\n"
 "margin: 5px;\n"
@@ -338,7 +420,7 @@ class Ui_MainWindow(object):
 "border: none;")
         self.label_21.setObjectName("label_21")
         self.falseRoot = QtWidgets.QLabel(self.groupBox_3)
-        self.falseRoot.setGeometry(QtCore.QRect(240, 80, 141, 31))
+        self.falseRoot.setGeometry(QtCore.QRect(240, 60, 141, 31))
         self.falseRoot.setStyleSheet("background: transparent;\n"
 "color: rgb(234, 255, 253);\n"
 "margin: 5px;\n"
@@ -347,6 +429,46 @@ class Ui_MainWindow(object):
 "color: rgb(234, 255, 253);\n"
 "border: none;")
         self.falseRoot.setObjectName("falseRoot")
+        self.label_30 = QtWidgets.QLabel(self.groupBox_3)
+        self.label_30.setGeometry(QtCore.QRect(20, 100, 131, 31))
+        self.label_30.setStyleSheet("background: transparent;\n"
+"color: rgb(234, 255, 253);\n"
+"margin: 5px;\n"
+"font-size: 14px;\n"
+"font-family: \"Lucida Console\", \"Courier New\", monospace;\n"
+"color: rgb(234, 255, 253);\n"
+"border: none;")
+        self.label_30.setObjectName("label_30")
+        self.excactRootFalse = QtWidgets.QLabel(self.groupBox_3)
+        self.excactRootFalse.setGeometry(QtCore.QRect(140, 100, 101, 31))
+        self.excactRootFalse.setStyleSheet("background: transparent;\n"
+"color: rgb(234, 255, 253);\n"
+"margin: 5px;\n"
+"font-size: 14px;\n"
+"font-family: \"Lucida Console\", \"Courier New\", monospace;\n"
+"color: rgb(234, 255, 253);\n"
+"border: none;")
+        self.excactRootFalse.setObjectName("excactRootFalse")
+        self.label_31 = QtWidgets.QLabel(self.groupBox_3)
+        self.label_31.setGeometry(QtCore.QRect(260, 100, 141, 31))
+        self.label_31.setStyleSheet("background: transparent;\n"
+"color: rgb(234, 255, 253);\n"
+"margin: 5px;\n"
+"font-size: 14px;\n"
+"font-family: \"Lucida Console\", \"Courier New\", monospace;\n"
+"color: rgb(234, 255, 253);\n"
+"border: none;")
+        self.label_31.setObjectName("label_31")
+        self.etFalse = QtWidgets.QLabel(self.tab_3)
+        self.etFalse.setGeometry(QtCore.QRect(390, 100, 101, 31))
+        self.etFalse.setStyleSheet("background: transparent;\n"
+"color: rgb(234, 255, 253);\n"
+"margin: 5px;\n"
+"font-size: 14px;\n"
+"font-family: \"Lucida Console\", \"Courier New\", monospace;\n"
+"color: rgb(234, 255, 253);\n"
+"border: none;")
+        self.etFalse.setObjectName("etFalse")
         self.tabWidget.addTab(self.tab_3, "")
         self.tab_5 = QtWidgets.QWidget()
         self.tab_5.setObjectName("tab_5")
@@ -379,7 +501,7 @@ class Ui_MainWindow(object):
         self.newtonFirstGuess.setText("")
         self.newtonFirstGuess.setObjectName("newtonFirstGuess")
         self.newtonCalcBtn = QtWidgets.QPushButton(self.groupBox_4)
-        self.newtonCalcBtn.setGeometry(QtCore.QRect(40, 140, 112, 32))
+        self.newtonCalcBtn.setGeometry(QtCore.QRect(40, 150, 112, 32))
         self.newtonCalcBtn.setStyleSheet("border-radius: 50px;\n"
 "background-color: rgb(234, 255, 253);\n"
 "font-size: 14px;\n"
@@ -387,7 +509,7 @@ class Ui_MainWindow(object):
 "color: rgb(0, 0, 40);")
         self.newtonCalcBtn.setObjectName("newtonCalcBtn")
         self.newtonShowIterBtn = QtWidgets.QPushButton(self.groupBox_4)
-        self.newtonShowIterBtn.setGeometry(QtCore.QRect(180, 140, 161, 32))
+        self.newtonShowIterBtn.setGeometry(QtCore.QRect(180, 150, 161, 32))
         self.newtonShowIterBtn.setStyleSheet("border-radius: 50px;\n"
 "background-color: rgb(234, 255, 253);\n"
 "font-size: 14px;\n"
@@ -395,7 +517,7 @@ class Ui_MainWindow(object):
 "color: rgb(0, 0, 40);")
         self.newtonShowIterBtn.setObjectName("newtonShowIterBtn")
         self.newtonShowGpBtn = QtWidgets.QPushButton(self.groupBox_4)
-        self.newtonShowGpBtn.setGeometry(QtCore.QRect(370, 140, 112, 32))
+        self.newtonShowGpBtn.setGeometry(QtCore.QRect(370, 150, 112, 32))
         self.newtonShowGpBtn.setStyleSheet("border-radius: 50px;\n"
 "background-color: rgb(234, 255, 253);\n"
 "font-size: 14px;\n"
@@ -403,7 +525,7 @@ class Ui_MainWindow(object):
 "color: rgb(0, 0, 40);")
         self.newtonShowGpBtn.setObjectName("newtonShowGpBtn")
         self.label_25 = QtWidgets.QLabel(self.groupBox_4)
-        self.label_25.setGeometry(QtCore.QRect(80, 80, 191, 31))
+        self.label_25.setGeometry(QtCore.QRect(80, 60, 191, 31))
         self.label_25.setStyleSheet("background: transparent;\n"
 "color: rgb(234, 255, 253);\n"
 "margin: 5px;\n"
@@ -413,7 +535,7 @@ class Ui_MainWindow(object):
 "border: none;")
         self.label_25.setObjectName("label_25")
         self.newtonRoot = QtWidgets.QLabel(self.groupBox_4)
-        self.newtonRoot.setGeometry(QtCore.QRect(240, 80, 141, 31))
+        self.newtonRoot.setGeometry(QtCore.QRect(240, 60, 141, 31))
         self.newtonRoot.setStyleSheet("background: transparent;\n"
 "color: rgb(234, 255, 253);\n"
 "margin: 5px;\n"
@@ -422,6 +544,46 @@ class Ui_MainWindow(object):
 "color: rgb(234, 255, 253);\n"
 "border: none;")
         self.newtonRoot.setObjectName("newtonRoot")
+        self.label_32 = QtWidgets.QLabel(self.groupBox_4)
+        self.label_32.setGeometry(QtCore.QRect(20, 100, 131, 31))
+        self.label_32.setStyleSheet("background: transparent;\n"
+"color: rgb(234, 255, 253);\n"
+"margin: 5px;\n"
+"font-size: 14px;\n"
+"font-family: \"Lucida Console\", \"Courier New\", monospace;\n"
+"color: rgb(234, 255, 253);\n"
+"border: none;")
+        self.label_32.setObjectName("label_32")
+        self.excactRootNewton = QtWidgets.QLabel(self.groupBox_4)
+        self.excactRootNewton.setGeometry(QtCore.QRect(140, 100, 101, 31))
+        self.excactRootNewton.setStyleSheet("background: transparent;\n"
+"color: rgb(234, 255, 253);\n"
+"margin: 5px;\n"
+"font-size: 14px;\n"
+"font-family: \"Lucida Console\", \"Courier New\", monospace;\n"
+"color: rgb(234, 255, 253);\n"
+"border: none;")
+        self.excactRootNewton.setObjectName("excactRootNewton")
+        self.label_33 = QtWidgets.QLabel(self.groupBox_4)
+        self.label_33.setGeometry(QtCore.QRect(260, 100, 141, 31))
+        self.label_33.setStyleSheet("background: transparent;\n"
+"color: rgb(234, 255, 253);\n"
+"margin: 5px;\n"
+"font-size: 14px;\n"
+"font-family: \"Lucida Console\", \"Courier New\", monospace;\n"
+"color: rgb(234, 255, 253);\n"
+"border: none;")
+        self.label_33.setObjectName("label_33")
+        self.etNewton = QtWidgets.QLabel(self.groupBox_4)
+        self.etNewton.setGeometry(QtCore.QRect(390, 100, 101, 31))
+        self.etNewton.setStyleSheet("background: transparent;\n"
+"color: rgb(234, 255, 253);\n"
+"margin: 5px;\n"
+"font-size: 14px;\n"
+"font-family: \"Lucida Console\", \"Courier New\", monospace;\n"
+"color: rgb(234, 255, 253);\n"
+"border: none;")
+        self.etNewton.setObjectName("etNewton")
         self.tabWidget.addTab(self.tab_5, "")
         self.tab_2 = QtWidgets.QWidget()
         self.tab_2.setObjectName("tab_2")
@@ -476,7 +638,7 @@ class Ui_MainWindow(object):
         self.secantSecondGuess.setText("")
         self.secantSecondGuess.setObjectName("secantSecondGuess")
         self.secantCalcBtn = QtWidgets.QPushButton(self.groupBox_5)
-        self.secantCalcBtn.setGeometry(QtCore.QRect(40, 140, 112, 32))
+        self.secantCalcBtn.setGeometry(QtCore.QRect(40, 150, 112, 32))
         self.secantCalcBtn.setStyleSheet("border-radius: 50px;\n"
 "background-color: rgb(234, 255, 253);\n"
 "font-size: 14px;\n"
@@ -484,7 +646,7 @@ class Ui_MainWindow(object):
 "color: rgb(0, 0, 40);")
         self.secantCalcBtn.setObjectName("secantCalcBtn")
         self.secantShowIterBtn = QtWidgets.QPushButton(self.groupBox_5)
-        self.secantShowIterBtn.setGeometry(QtCore.QRect(180, 140, 161, 32))
+        self.secantShowIterBtn.setGeometry(QtCore.QRect(180, 150, 161, 32))
         self.secantShowIterBtn.setStyleSheet("border-radius: 50px;\n"
 "background-color: rgb(234, 255, 253);\n"
 "font-size: 14px;\n"
@@ -492,7 +654,7 @@ class Ui_MainWindow(object):
 "color: rgb(0, 0, 40);")
         self.secantShowIterBtn.setObjectName("secantShowIterBtn")
         self.secantShowGpBtn = QtWidgets.QPushButton(self.groupBox_5)
-        self.secantShowGpBtn.setGeometry(QtCore.QRect(370, 140, 112, 32))
+        self.secantShowGpBtn.setGeometry(QtCore.QRect(370, 150, 112, 32))
         self.secantShowGpBtn.setStyleSheet("border-radius: 50px;\n"
 "background-color: rgb(234, 255, 253);\n"
 "font-size: 14px;\n"
@@ -500,7 +662,7 @@ class Ui_MainWindow(object):
 "color: rgb(0, 0, 40);")
         self.secantShowGpBtn.setObjectName("secantShowGpBtn")
         self.label_27 = QtWidgets.QLabel(self.groupBox_5)
-        self.label_27.setGeometry(QtCore.QRect(80, 80, 171, 31))
+        self.label_27.setGeometry(QtCore.QRect(80, 60, 171, 31))
         self.label_27.setStyleSheet("background: transparent;\n"
 "color: rgb(234, 255, 253);\n"
 "margin: 5px;\n"
@@ -510,7 +672,7 @@ class Ui_MainWindow(object):
 "border: none;")
         self.label_27.setObjectName("label_27")
         self.secantRoot = QtWidgets.QLabel(self.groupBox_5)
-        self.secantRoot.setGeometry(QtCore.QRect(240, 80, 141, 31))
+        self.secantRoot.setGeometry(QtCore.QRect(240, 60, 141, 31))
         self.secantRoot.setStyleSheet("background: transparent;\n"
 "color: rgb(234, 255, 253);\n"
 "margin: 5px;\n"
@@ -519,6 +681,46 @@ class Ui_MainWindow(object):
 "color: rgb(234, 255, 253);\n"
 "border: none;")
         self.secantRoot.setObjectName("secantRoot")
+        self.label_34 = QtWidgets.QLabel(self.groupBox_5)
+        self.label_34.setGeometry(QtCore.QRect(20, 100, 131, 31))
+        self.label_34.setStyleSheet("background: transparent;\n"
+"color: rgb(234, 255, 253);\n"
+"margin: 5px;\n"
+"font-size: 14px;\n"
+"font-family: \"Lucida Console\", \"Courier New\", monospace;\n"
+"color: rgb(234, 255, 253);\n"
+"border: none;")
+        self.label_34.setObjectName("label_34")
+        self.excactRootSecant = QtWidgets.QLabel(self.groupBox_5)
+        self.excactRootSecant.setGeometry(QtCore.QRect(140, 100, 101, 31))
+        self.excactRootSecant.setStyleSheet("background: transparent;\n"
+"color: rgb(234, 255, 253);\n"
+"margin: 5px;\n"
+"font-size: 14px;\n"
+"font-family: \"Lucida Console\", \"Courier New\", monospace;\n"
+"color: rgb(234, 255, 253);\n"
+"border: none;")
+        self.excactRootSecant.setObjectName("excactRootSecant")
+        self.label_35 = QtWidgets.QLabel(self.groupBox_5)
+        self.label_35.setGeometry(QtCore.QRect(260, 100, 141, 31))
+        self.label_35.setStyleSheet("background: transparent;\n"
+"color: rgb(234, 255, 253);\n"
+"margin: 5px;\n"
+"font-size: 14px;\n"
+"font-family: \"Lucida Console\", \"Courier New\", monospace;\n"
+"color: rgb(234, 255, 253);\n"
+"border: none;")
+        self.label_35.setObjectName("label_35")
+        self.etSecant = QtWidgets.QLabel(self.groupBox_5)
+        self.etSecant.setGeometry(QtCore.QRect(390, 100, 101, 31))
+        self.etSecant.setStyleSheet("background: transparent;\n"
+"color: rgb(234, 255, 253);\n"
+"margin: 5px;\n"
+"font-size: 14px;\n"
+"font-family: \"Lucida Console\", \"Courier New\", monospace;\n"
+"color: rgb(234, 255, 253);\n"
+"border: none;")
+        self.etSecant.setObjectName("etSecant")
         self.tabWidget.addTab(self.tab_2, "")
         self.label_5 = QtWidgets.QLabel(self.centralWidget)
         self.label_5.setGeometry(QtCore.QRect(440, 90, 161, 31))
@@ -566,7 +768,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralWidget)
 
         self.retranslateUi(MainWindow)
-        self.tabWidget.setCurrentIndex(0)
+        self.tabWidget.setCurrentIndex(4)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
         # Connect Bisection button to it's function
@@ -585,8 +787,14 @@ class Ui_MainWindow(object):
         lowerBound = float(self.bisectionLowerBound.text())
         upperBound = float(self.bisectionUpperBound.text())
 
+        start_time = time.time()
         result = Bisection.mainFunc(function, maxIteration, epsilon, lowerBound, upperBound)
         self.bisectionRoot.setText(str(result))
+        self.excactRootBisection.setText(str(Excact.mainFunc(function)))
+
+        end_time = time.time()
+        t2 = end_time - start_time
+        self.etBisection.setText("%.6f s" % t2)
 
     def RegularFalseCalcBtnClicked(self):
         # Same for all methods
@@ -597,8 +805,13 @@ class Ui_MainWindow(object):
         lowerBound = float(self.falseLowerBound.text())
         upperBound = float(self.falseUpperBound.text())
 
+        start_time = time.time()
         result = RegularFalse.mainFunc(function, maxIteration, epsilon, lowerBound, upperBound)
         self.falseRoot.setText(str(result))
+        self.excactRootFalse.setText(str(Excact.mainFunc(function)))
+        end_time = time.time()
+        t2 = end_time - start_time
+        self.etFalse.setText("%.6f s" % t2)
 
     def SecantCalcBtnClicked(self):
         # Same for all methods
@@ -609,8 +822,13 @@ class Ui_MainWindow(object):
         firstGuess = float(self.secantFirstGuess.text())
         secondGuess = float(self.secantSecondGuess.text())
 
+        start_time = time.time()
         result = Secant.mainFunc(function, maxIteration, epsilon, firstGuess, secondGuess)
         self.secantRoot.setText(str(result))
+        self.excactRootSecant.setText(str(Excact.mainFunc(function)))
+        end_time = time.time()
+        t2 = end_time - start_time
+        self.etSecant.setText("%.6f s" % t2)
 
     def FixedPointCalcBtnClicked(self):
         # Same for all methods
@@ -620,8 +838,14 @@ class Ui_MainWindow(object):
         # Fixed Point parameters
         firstGuess = float(self.fixedFirstGuess.text())
 
+        start_time = time.time()
         result = Fixed.mainFunc(function, maxIteration, epsilon, firstGuess)
         self.fixedRoot.setText(str(result))
+        self.excactRootFixed.setText(str(Excact.mainFunc(function)))
+
+        end_time = time.time()
+        t2 = end_time - start_time
+        self.etFixed.setText("%.6f s" % t2)
 
     def NewtonCalcBtnClicked(self):
         # Same for all methods
@@ -631,14 +855,18 @@ class Ui_MainWindow(object):
         # Fixed Point parameters
         firstGuess = float(self.newtonFirstGuess.text())
 
-        result = newton.mainFunc(function, maxIteration, epsilon, firstGuess)
+        start_time = time.time()
+        result = Newton.mainFunc(function, maxIteration, epsilon, firstGuess)
         self.newtonRoot.setText(str(result))
-
+        self.excactRootNewton.setText(str(Excact.mainFunc(function)))
+        end_time = time.time()
+        t2 = end_time - start_time
+        self.etNewton.setText("%.6f s" % t2)
 
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "Numerical Lab"))
         self.label.setText(_translate("MainWindow", "Numerical Project"))
         self.label_2.setText(_translate("MainWindow", "Function:"))
         self.checkBox.setText(_translate("MainWindow", "Select from File"))
@@ -650,6 +878,10 @@ class Ui_MainWindow(object):
         self.bisectionShowGpBtn.setText(_translate("MainWindow", "Show graph"))
         self.label_19.setText(_translate("MainWindow", "Root Result:  X("))
         self.bisectionRoot.setText(_translate("MainWindow", "0 ): 0"))
+        self.label_23.setText(_translate("MainWindow", "Excact Root X:"))
+        self.label_26.setText(_translate("MainWindow", "Execution Time:"))
+        self.excactRootBisection.setText(_translate("MainWindow", "0"))
+        self.etBisection.setText(_translate("MainWindow", "0 ms"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.Bisection), _translate("MainWindow", "Bisection"))
         self.label_12.setText(_translate("MainWindow", "First Guess:"))
         self.fixedCalcBtn.setText(_translate("MainWindow", "Calculate"))
@@ -657,6 +889,10 @@ class Ui_MainWindow(object):
         self.fixedShowGpBtn.setText(_translate("MainWindow", "Show graph"))
         self.label_14.setText(_translate("MainWindow", "Root Result:  X("))
         self.fixedRoot.setText(_translate("MainWindow", "0 ): 0"))
+        self.label_28.setText(_translate("MainWindow", "Excact Root X:"))
+        self.excactRootFixed.setText(_translate("MainWindow", "0"))
+        self.label_29.setText(_translate("MainWindow", "Execution Time:"))
+        self.etFixed.setText(_translate("MainWindow", "0 ms"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_4), _translate("MainWindow", "Fixed point"))
         self.label_18.setText(_translate("MainWindow", "Lower Bound:"))
         self.label_20.setText(_translate("MainWindow", "Upper Bound:"))
@@ -665,6 +901,10 @@ class Ui_MainWindow(object):
         self.falseShowGpBtn.setText(_translate("MainWindow", "Show graph"))
         self.label_21.setText(_translate("MainWindow", "Root Result:  X("))
         self.falseRoot.setText(_translate("MainWindow", "0 ): 0"))
+        self.label_30.setText(_translate("MainWindow", "Excact Root X:"))
+        self.excactRootFalse.setText(_translate("MainWindow", "0"))
+        self.label_31.setText(_translate("MainWindow", "Execution Time:"))
+        self.etFalse.setText(_translate("MainWindow", "0 ms"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_3), _translate("MainWindow", "False-position"))
         self.label_22.setText(_translate("MainWindow", "First Guess:"))
         self.newtonCalcBtn.setText(_translate("MainWindow", "Calculate"))
@@ -672,6 +912,10 @@ class Ui_MainWindow(object):
         self.newtonShowGpBtn.setText(_translate("MainWindow", "Show graph"))
         self.label_25.setText(_translate("MainWindow", "Root Result:  X("))
         self.newtonRoot.setText(_translate("MainWindow", "0 ): 0"))
+        self.label_32.setText(_translate("MainWindow", "Excact Root X:"))
+        self.excactRootNewton.setText(_translate("MainWindow", "0"))
+        self.label_33.setText(_translate("MainWindow", "Execution Time:"))
+        self.etNewton.setText(_translate("MainWindow", "0 ms"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_5), _translate("MainWindow", "Newton-Raphson"))
         self.label_15.setText(_translate("MainWindow", "First Guess:"))
         self.label_24.setText(_translate("MainWindow", "Second Guess:"))
@@ -680,6 +924,10 @@ class Ui_MainWindow(object):
         self.secantShowGpBtn.setText(_translate("MainWindow", "Show graph"))
         self.label_27.setText(_translate("MainWindow", "Root Result:  X("))
         self.secantRoot.setText(_translate("MainWindow", "0 ): 0"))
+        self.label_34.setText(_translate("MainWindow", "Excact Root X:"))
+        self.excactRootSecant.setText(_translate("MainWindow", "0"))
+        self.label_35.setText(_translate("MainWindow", "Execution Time:"))
+        self.etSecant.setText(_translate("MainWindow", "0 ms"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), _translate("MainWindow", "Secant"))
         self.label_5.setText(_translate("MainWindow", "Max Iteration:"))
         self.label_6.setText(_translate("MainWindow", "Epsilon:"))

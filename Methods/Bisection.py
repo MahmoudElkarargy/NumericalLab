@@ -50,12 +50,8 @@ def bisection(a, b, expr, maxIteration, Epsilon, x):
             a = c
         step +=1
 
-        # iterationStr.append(str('Iteration(%d): X(lower) | f(X-lower) | X(upper) | f(X-upper) | X(mid) | f(X-mid)' % step))
-        # iterationStr.append(str("\t\t\t %.6f \t %.6f \t  %.6f \t %.6f \t %.6f \t %.6f \n"%(a, func(expr,a,x), b, func(expr,b,x), c, func(expr,c,x))))
-
     finalIteration = step
     print(finalIteration)
-    # print(iterationStr)
     end_time = time.time()
     t2 = end_time - start_time
     print("execution time for Bisection=", "%.6f" " sec" % t2)
@@ -66,10 +62,6 @@ def mainFunc(function, maxIteration, epsilon, a, b):
      # the possible variable names must be known beforehand...
     expr = sympify(function)
     x = var('x')
-    sol = solve(expr, x)
-    print(sol)
-    if sol==LambertW(1):
-        sol=0.5671432904097
-    print('\n Exact root is: %0.8f' % sol[0])
+
     return bisection(a, b, expr, maxIteration, epsilon, x)
 
