@@ -1,5 +1,6 @@
 
 from sympy import *
+import time
 
 
 # Defining Function
@@ -14,6 +15,7 @@ def secant(x0, x1, e, N, Function):
     print('\n\n*** SECANT METHOD IMPLEMENTATION *')
     step = 1
     condition = True
+    start_time = time.time()
     while condition:
         if f(x0, Function) == f(x1, Function):
             print('Divide by zero error!')
@@ -31,6 +33,9 @@ def secant(x0, x1, e, N, Function):
             break
 
         condition = abs(f(x2, Function)) > e
+    end_time = time.time()
+    t4= end_time - start_time
+    print("execution time for Secant=", "%.6f" " sec" % t4)
     return "%d ): %.6f" % (step, x2)
 
 def mainFunc(expr, N, e, x0, x1):

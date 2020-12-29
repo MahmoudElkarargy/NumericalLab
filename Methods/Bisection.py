@@ -10,6 +10,7 @@
 
 from sympy import var
 from sympy import sympify
+import time
 
 def func(expr, value, x):
 	return expr.subs(x, value)
@@ -19,11 +20,13 @@ iterationStr = "*** BISECTION METHOD ITERATIONS ***\n"
 # Prints root of func(x)
 # with error of EPSILON
 def bisection(a, b, expr, maxIteration, Epsilon, x):
+
     if (func(expr,a, x) * func(expr,b, x) >= 0):
         print("You have not assumed right a and b\n")
         return
     c = a
     step = 1
+    start_time = time.time()
     while ((b-a) >= Epsilon and step < maxIteration):
     	# Find middle point
         print('Iteration(%d): X(lower) | f(X-lower) | X(upper) | f(X-upper) | X(mid) | f(X-mid)' % step)
@@ -49,6 +52,9 @@ def bisection(a, b, expr, maxIteration, Epsilon, x):
     finalIteration = step
     print(finalIteration)
     # print(iterationStr)
+    end_time = time.time()
+    t2 = end_time - start_time
+    print("execution time for Bisection=", "%.6f" " sec" % t2)
     return "%d ): %.6f"%(finalIteration,c)
 
 # Main code

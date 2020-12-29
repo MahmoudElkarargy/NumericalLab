@@ -1,5 +1,6 @@
 from sympy import var
 from sympy import sympify
+import time
 
 
 def func(expr, value, x):
@@ -23,6 +24,7 @@ def regulaFalsi(a, b, expr, x,MAX_ITER, EPSILON):
     # Initialize result
     i = 1
     old_c = int(0)
+    start_time = time.time()
     while i < MAX_ITER:
         # Find the point that touches x a/xis
 
@@ -39,6 +41,9 @@ def regulaFalsi(a, b, expr, x,MAX_ITER, EPSILON):
             a = c
         old_c = c
         i = i + 1
+    end_time = time.time()
+    t3 = end_time - start_time
+    print("execution time for RegularFalse=", "%.6f" " sec" % t3)
 
     return "%d ): %.6f" % (i, c)
 

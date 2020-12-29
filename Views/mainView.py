@@ -12,7 +12,7 @@ import Methods.Bisection as Bisection
 import Methods.RegularFalse as RegularFalse
 import Methods.Secant as Secant
 import Methods.FixedPoint as Fixed
-import Methods.Newton as Newton
+import Methods.newton as newton
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -631,7 +631,7 @@ class Ui_MainWindow(object):
         # Fixed Point parameters
         firstGuess = float(self.newtonFirstGuess.text())
 
-        result = Newton.mainFunc(function, maxIteration, epsilon, firstGuess)
+        result = newton.mainFunc(function, maxIteration, epsilon, firstGuess)
         self.newtonRoot.setText(str(result))
 
 

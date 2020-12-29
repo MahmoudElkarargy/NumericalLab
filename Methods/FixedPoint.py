@@ -1,6 +1,7 @@
 # Fixed Point Iteration Method
 # Importing math to use sqrt function
 from sympy import *
+import time
 
 def f(expr, value, x):
 	return expr.subs(x, value)
@@ -14,9 +15,11 @@ def derivFunc(expr, value):
 
 # Implementing Fixed Point Iteration Method
 def fixedPointIteration(function,x0, e, N,x):
+
     print('\n\n*** FIXED POINT ITERATION ***')
     step = 1
     flag = 1
+    #start_time = time.time()
     condition = True
     while condition:
         x1 = derivFunc(function,x0)
@@ -37,6 +40,12 @@ def fixedPointIteration(function,x0, e, N,x):
     else:
         print('\nNot Convergent.')
         return 'None'
+
+ #end_time = time.time()
+ #t5 = end_time - start_time
+ #print("execution time for FixedPoint=", "%.6f" " sec" % t5)
+
+
 
 
 
