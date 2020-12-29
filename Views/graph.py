@@ -36,8 +36,8 @@ class Ui_SecondWindow(object):
         MainWindow.graphWidget = pg.PlotWidget()
         MainWindow.setCentralWidget(MainWindow.graphWidget)
         # random data
-        start = 0
-        stop = 5
+        start = self.a-1
+        stop = self.b+1
         step = 0.001
 
         float_range_array = np.arange(start, stop, step)
@@ -81,15 +81,13 @@ class Ui_SecondWindow(object):
 
        # self.graphWidget.plot(self.tuples, pen=pen)
         self.timer = QtCore.QTimer()
-        self.timer.setInterval(3000)
+        self.timer.setInterval(1500)
         self.timer.timeout.connect(self.update_plot_data)
         self.timer.start()
 
 
     def update_plot_data(self):
-
         self.input = [float(x) for x in next(self.file).split()]
-        print(self.input)
         self.a_values = self.a_values[2:]  # Remove the first y element.
         self.a_values.append(self.input[0])
         self.a_values.append(self.input[2])  # Add a new value 1 higher than the last.
