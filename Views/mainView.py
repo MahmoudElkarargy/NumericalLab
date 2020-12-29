@@ -15,6 +15,7 @@ import Methods.FixedPoint as Fixed
 import Methods.Newton as Newton
 import Methods.Excact as Excact
 import time
+from Views.graph import Ui_SecondWindow
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -777,6 +778,7 @@ class Ui_MainWindow(object):
         self.secantCalcBtn.clicked.connect(self.SecantCalcBtnClicked)
         self.fixedCalcBtn.clicked.connect(self.FixedPointCalcBtnClicked)
         self.newtonCalcBtn.clicked.connect(self.NewtonCalcBtnClicked)
+        self.bisectionShowGpBtn.clicked.connect(self.graphBisectionBtnClicked)
 
     def BisectionCalcBtnClicked(self):
         # Same for all methods
@@ -795,6 +797,23 @@ class Ui_MainWindow(object):
         end_time = time.time()
         t2 = end_time - start_time
         self.etBisection.setText("%.6f s" % t2)
+
+    def graphBisectionBtnClicked(self):
+        # Same for all methods
+        self.function = self.functionLineEdit.text()
+        self.maxIteration = int(self.maxIterations.text())
+        self.epsilon = float(self.Epsilon.text())
+        # Bisection parameters
+        self.lowerBound = float(self.bisectionLowerBound.text())
+        self.upperBound = float(self.bisectionUpperBound.text())
+
+        self.window = QtWidgets.QMainWindow()
+        self.ui = Ui_SecondWindow(self.function, self.maxIteration, self.epsilon, self.lowerBound, self.upperBound)
+        self.ui.setupUi(self.window)
+        # MainWindow.hide()
+        self.window.show()
+
+
 
     def RegularFalseCalcBtnClicked(self):
         # Same for all methods
@@ -936,8 +955,13 @@ class Ui_MainWindow(object):
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
+    try:
+        app
+    except:
+        app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
     ui = Ui_MainWindow()
     ui.setupUi(MainWindow)
     MainWindow.show()
+
     sys.exit(app.exec_())
