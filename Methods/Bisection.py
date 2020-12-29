@@ -63,11 +63,8 @@ def bisection(a, b, expr, maxIteration, Epsilon, x):
 def mainFunc(function, maxIteration, epsilon, a, b):
      # the possible variable names must be known beforehand...
     expr = sympify(function)
-    print("hi1")
     x = var('x')
-    print("hi2")
     sol = solve(expr, x)
-    print("hi3")
     print(sol)
     if sol==LambertW(1):
         sol=0.5671432904097
