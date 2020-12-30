@@ -883,6 +883,7 @@ class Ui_MainWindow(object):
                 # Bisection parameters
                 firstGuess = float(file.readline())
                 secondGuess = float(file.readline())
+
         else:
                 function = self.functionLineEdit.text()
                 maxIteration = int(self.maxIterations.text())
@@ -892,7 +893,7 @@ class Ui_MainWindow(object):
                 secondGuess = float(self.secantSecondGuess.text())
 
         start_time = time.time()
-        result = Secant.mainFunc(function, maxIteration, epsilon, firstGuess, secondGuess)
+        result = Secant.mainFunc(function,  maxIteration, epsilon, firstGuess, secondGuess)
         self.secantRoot.setText(str(result))
         self.excactRootSecant.setText(str(Excact.mainFunc(function)))
         end_time = time.time()
@@ -912,16 +913,19 @@ class Ui_MainWindow(object):
                 epsilon = float(file.readline())
                 # Bisection parameters
                 firstGuess = float(file.readline())
+                g_x = file.readline()
 
         else:
-                function = self.functionLineEdit.text()
+                input_list = self.functionLineEdit.text().split(",")
+                function = input_list[0]
+                g_x = input_list[1]
                 maxIteration = int(self.maxIterations.text())
                 epsilon = float(self.Epsilon.text())
                 # Fixed Point parameters
                 firstGuess = float(self.fixedFirstGuess.text())
 
         start_time = time.time()
-        result = Fixed.mainFunc(function, maxIteration, epsilon, firstGuess)
+        result = Fixed.mainFunc(function, g_x,maxIteration, epsilon, firstGuess)
         self.fixedRoot.setText(str(result))
         self.excactRootFixed.setText(str(Excact.mainFunc(function)))
 
