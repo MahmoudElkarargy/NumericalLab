@@ -27,6 +27,7 @@ def fixedPointIteration(function, g_x, x0, e, N,x):
     while i<N:
         x1 = f(g_x,x0)
         print('Iteration-%d, x1 = %0.6f and f(x1) = %0.6f' % (step, x1, f(function,x1)))
+        step=step+1
       #  print(abs((x0-x1)/x1 ))
         if abs((x0-x1)/x1 )< e:
             break

@@ -913,6 +913,7 @@ class Ui_MainWindow(object):
                 epsilon = float(file.readline())
                 # Bisection parameters
                 firstGuess = float(file.readline())
+                file.readline()
                 g_x = file.readline()
 
         else:

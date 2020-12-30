@@ -26,10 +26,13 @@ def regulaFalsi(a, b, expr, x,MAX_ITER, EPSILON):
     i = 1
     old_c = int(0)
     start_time = time.time()
+    step=0
     while i < MAX_ITER:
         # Find the point that touches x a/xis
 
         c = (a * func(expr, b, x) - b * func(expr, a, x)) / (func(expr, b, x) - func(expr, a, x))
+        print('Iteration-%d, Xr = %0.6f and f(Xr) = %0.6f' % (step, c, func(expr, c,x)))
+        step=step+1
         if abs(abs(c - old_c) / c) < EPSILON:
             break
         # Check if the above found point is root
