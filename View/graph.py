@@ -63,9 +63,9 @@ class Ui_SecondWindow(object):
         pen = pg.mkPen(color=(255, 0, 0))
 
 
-        self.file = open("../Views/values.txt", "r")
+        self.file = open("../View/values.txt", "r")
 
-        if os.path.isfile('../Views/values.txt'):
+        if os.path.isfile('../View/values.txt'):
             print("File exist")
         else:
             print("File not exist")

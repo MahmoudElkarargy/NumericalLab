@@ -7,7 +7,7 @@
 # WARNING! All changes made in this file will be lost!
 
 
-from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5 import QtCore, QtWidgets
 import Methods.Bisection as Bisection
 import Methods.RegularFalse as RegularFalse
 import Methods.Secant as Secant
@@ -15,7 +15,7 @@ import Methods.FixedPoint as Fixed
 import Methods.Newton as Newton
 import Methods.Excact as Excact
 import time
-from Views.graph import Ui_SecondWindow
+from View.graph import Ui_SecondWindow
 
 
 class Ui_MainWindow(object):
@@ -789,7 +789,7 @@ class Ui_MainWindow(object):
         lowerBound = 0
         upperBound = 0
         if (self.checkBox.isChecked()):
-                file = open('../Views/input.txt', "r")
+                file = open('../View/input.txt', "r")
                 function = file.readline()
                 maxIteration = int(file.readline())
                 epsilon = float(file.readline())
@@ -816,7 +816,7 @@ class Ui_MainWindow(object):
     def graphBisectionBtnClicked(self):
         # Same for all methods
         if (self.checkBox.isChecked()):
-                file = open('../Views/input.txt', "r")
+                file = open('../View/input.txt', "r")
                 self.function = file.readline()
                 self.maxIteration = int(file.readline())
                 self.epsilon = float(file.readline())
@@ -845,7 +845,7 @@ class Ui_MainWindow(object):
         lowerBound = 0
         upperBound = 0
         if (self.checkBox.isChecked()):
-                file = open('../Views/input.txt', "r")
+                file = open('../View/input.txt', "r")
                 function = file.readline()
                 maxIteration = int(file.readline())
                 epsilon = float(file.readline())
@@ -876,7 +876,7 @@ class Ui_MainWindow(object):
         firstGuess = 0
         secondGuess = 0
         if (self.checkBox.isChecked()):
-                file = open('../Views/input.txt', "r")
+                file = open('../View/input.txt', "r")
                 function = file.readline()
                 maxIteration = int(file.readline())
                 epsilon = float(file.readline())
@@ -906,7 +906,7 @@ class Ui_MainWindow(object):
         epsilon = 0
         firstGuess = 0
         if (self.checkBox.isChecked()):
-                file = open('../Views/input.txt', "r")
+                file = open('../View/input.txt', "r")
                 function = file.readline()
                 maxIteration = int(file.readline())
                 epsilon = float(file.readline())
@@ -936,7 +936,7 @@ class Ui_MainWindow(object):
         epsilon = 0
         firstGuess = 0
         if (self.checkBox.isChecked()):
-                file = open('../Views/input.txt', "r")
+                file = open('../View/input.txt', "r")
                 function = file.readline()
                 maxIteration = int(file.readline())
                 epsilon = float(file.readline())

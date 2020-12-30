@@ -14,8 +14,8 @@ def func(expr, value, x):
 # with error of EPSILON
 def bisection(a, b, expr, maxIteration, Epsilon, x):
     print("In bisectiooon")
-    file = open("../Views/values.txt", "w")
-    if os.path.isfile('../Views/values.txt'):
+    file = open("../View/values.txt", "w")
+    if os.path.isfile('../Viewss/values.txt'):
         print("File exist")
     else:
         print("File not exist")
