@@ -87,15 +87,18 @@ class Ui_SecondWindow(object):
 
 
     def update_plot_data(self):
-        self.input = [float(x) for x in next(self.file).split()]
-        self.a_values = self.a_values[2:]  # Remove the first y element.
-        self.a_values.append(self.input[0])
-        self.a_values.append(self.input[2])  # Add a new value 1 higher than the last.
-        self.b_values = self.b_values[2:]  # Remove the first
-        self.b_values.append(self.input[1])
-        self.b_values.append(self.input[3])  # Add a new random value.
-        self.data_line.setData(self.a_values, self.b_values)  # Update the data.
-
+        next_line = next(self.file)
+        if(next_line != None):
+            self.input = [float(x) for x in next_line.split()]
+            self.a_values = self.a_values[2:]  # Remove the first y element.
+            self.a_values.append(self.input[0])
+            self.a_values.append(self.input[2])  # Add a new value 1 higher than the last.
+            self.b_values = self.b_values[2:]  # Remove the first
+            self.b_values.append(self.input[1])
+            self.b_values.append(self.input[3])  # Add a new random value.
+            self.data_line.setData(self.a_values, self.b_values)  # Update the data.
+        else:
+            pass
 
 if __name__ == '__main__':
     import sys
