@@ -886,6 +886,7 @@ class Ui_MainWindow(object):
             start_time = time.time()
             result = RegularFalse.mainFunc(function, maxIteration, epsilon, lowerBound, upperBound)
             self.falseRoot.setText(str(result))
+
             end_time = time.time()
             t2 = end_time - start_time
             self.etFalse.setText("%.6f s" % t2)
@@ -1023,7 +1024,7 @@ class Ui_MainWindow(object):
         self.falseShowGpBtn.setText(_translate("MainWindow", "Show graph"))
         self.label_21.setText(_translate("MainWindow", "Root Result:  X("))
         self.falseRoot.setText(_translate("MainWindow", "0 ): 0"))
-        self.label_30.setText(_translate("MainWindow", "Excact Root X:"))
+        self.label_30.setText(_translate("MainWindow", "Exact Root X:"))
         self.excactRootFalse.setText(_translate("MainWindow", "0"))
         self.label_31.setText(_translate("MainWindow", "Execution Time:"))
         self.etFalse.setText(_translate("MainWindow", "0 ms"))

@@ -53,6 +53,7 @@ def bisection(a, b, expr, maxIteration, Epsilon, x):
     finalIteration = step
     return "%d ): %.6f"%(finalIteration,c)
 
+
 # Main code
 def mainFunc(function, maxIteration, epsilon, a, b):
      # the possible variable names must be known beforehand...

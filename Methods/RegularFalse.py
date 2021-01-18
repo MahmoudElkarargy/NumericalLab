@@ -8,10 +8,6 @@ def func(expr, value, x):
     return expr.subs(x, value)
 
 
-MAX_ITER = 1000000
-EPSILON = 0.00001
-
-
 # An example function whose solution
 # is determined using Bisection Method.
 # The function is x^3 - x^2 + 2
